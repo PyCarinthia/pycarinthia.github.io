@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ SITENAME }}{% endblock %}
+{% block description %}{{ page.description|default(SITEDESCRIPTION) }}{% endblock %}
+
+{% block content %}
+  <header class="page-hero">
+    <div class="shell">
+      <p class="section-kicker">{{ page.title }}</p>
+      <h1>{{ page.heading|default("A Python user group for Carinthia.") }}</h1>
+      <p>{{ page.description }}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell prose">
+      <article>
+        {{ page.content }}
+      </article>
+    </div>
+  </section>
+{% endblock %}

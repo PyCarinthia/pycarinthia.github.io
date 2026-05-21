@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Events | {{ SITENAME }}{% endblock %}
+{% block description %}Upcoming and past PyCarinthia meetups.{% endblock %}
+
+{% block content %}
+  {% set upcoming = articles|upcoming_events %}
+  {% set past = articles|past_events %}
+  <header class="page-hero">
+    <div class="shell">
+      <p class="section-kicker">Events</p>
+      <h1>Meetups, talks, workshops, and coding evenings.</h1>
+      <p>
+        Events are Markdown files and can also be merged from a remote JSON API
+        at build time.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-header">
+        <p class="section-kicker">Upcoming</p>
+        <h2 class="section-heading">Next on the calendar.</h2>
+      </div>
+      {% if upcoming %}
+        <div class="event-list">
+          {% for event in upcoming %}
+            <a class="event-card" href="{{ SITEURL }}/{{ event.url }}">
+              <time datetime="{{ event.event_date }}">{{ event|event_date_long }} - {{ event|event_time }}</time>
+              <h2>{{ event.title }}</h2>
+              <p>{{ event.venue }}, {{ event.city }}</p>
+              <p>{{ event.description }}</p>
+            </a>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="lead">No upcoming events are scheduled yet.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="shell">
+      <div class="section-header">
+        <p class="section-kicker">Past</p>
+        <h2 class="section-heading">What we have already covered.</h2>
+      </div>
+      {% if past %}
+        <div class="event-list">
+          {% for event in past %}
+            <a class="event-card" href="{{ SITEURL }}/{{ event.url }}">
+              <time datetime="{{ event.event_date }}">{{ event|event_date_short }}</time>
+              <h3>{{ event.title }}</h3>
+              <p>{{ event.venue }}, {{ event.city }}</p>
+              <p>{{ event.description }}</p>
+            </a>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="lead">No past meetings yet. The first one is still ahead.</p>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% set upcoming = articles|upcoming_events %}
+  {% set next_event = upcoming[0] if upcoming else none %}
+  <section class="hero" aria-label="PyCarinthia">
+    <div class="shell hero-content">
+      <p class="eyebrow">Python user group - Carinthia, Austria</p>
+      <h1>The <span>Python</span> community by the lake.</h1>
+      <p class="hero-copy">
+        PyCarinthia is a local community for people who use, teach, build with,
+        or want to learn Python - from web apps and data tools to automation,
+        scientific computing, and AI.
+      </p>
+      <div class="actions">
+        <a class="button" href="#next">See the next meetup</a>
+        <a class="button secondary" href="#connect">Get involved</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="next">
+    <div class="shell">
+      <div class="section-header">
+        <p class="section-kicker">Next meetup</p>
+        <h2 class="section-heading">Come say hello.</h2>
+        <p class="lead">
+          No membership, no fee, and no pressure. Bring a question, a demo, a talk
+          idea, or just yourself.
+        </p>
+      </div>
+
+      {% if next_event %}
+        <article class="event-panel">
+          <div class="date-tile" aria-label="{{ next_event|event_date_long }}">
+            <span class="month">{{ next_event|event_month }}</span>
+            <span class="day">{{ next_event|event_day }}</span>
+            <span class="time">{{ next_event|event_time }} Vienna time</span>
+          </div>
+          <div class="event-body">
+            <p class="card-kicker">{{ next_event.format }}</p>
+            <h3 class="event-title">{{ next_event.title }}</h3>
+            <div class="event-meta">
+              <span class="pill">{{ next_event|event_date_long }}</span>
+              <span class="pill">{{ next_event.venue }}</span>
+              <span class="pill">{{ next_event.city }}</span>
+            </div>
+            <p>{{ next_event.description }}</p>
+            <div class="event-actions">
+              <a class="button dark" href="{{ SITEURL }}/calendar.ics">Add to calendar</a>
+              <a class="button light" href="{{ SITEURL }}/{{ next_event.url }}">Read details</a>
+              {% if next_event.external_url %}
+                <a class="button light" href="{{ next_event.external_url }}" target="_blank" rel="noopener noreferrer">RSVP</a>
+              {% endif %}
+              {% if next_event.map_url %}
+                <a class="button light" href="{{ next_event.map_url }}" target="_blank" rel="noopener noreferrer">Plan route</a>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+        {% if next_event.map_url %}
+          <div class="map-frame" aria-label="Map of Klagenfurt">
+            <iframe
+              title="Map around {{ next_event.venue }}"
+              src="{{ VENUE_MAP_EMBED }}"
+              loading="lazy"></iframe>
+          </div>
+        {% endif %}
+      {% else %}
+        <article class="event-panel">
+          <div class="date-tile">
+            <span class="month">Soon</span>
+            <span class="day">--</span>
+            <span class="time">Date TBA</span>
+          </div>
+          <div class="event-body">
+            <p class="card-kicker">Planning</p>
+            <h3 class="event-title">The next meetup is being scheduled.</h3>
+            <p>Details will appear here once the date and venue are confirmed.</p>
+            <div class="event-actions">
+              <a class="button dark" href="{{ CONTACT_URL }}">Contact us</a>
+            </div>
+          </div>
+        </article>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="section alt" id="formats">
+    <div class="shell">
+      <div class="section-header">
+        <p class="section-kicker">How we meet</p>
+        <h2 class="section-heading">A user group that can flex.</h2>
+        <p class="lead">
+          The format changes with the people in the room. Some evenings are talks,
+          some are hands-on, and some are mostly conversation.
+        </p>
+      </div>
+      <div class="format-grid">
+        {% for format in FORMATS %}
+          <article class="card">
+            <span class="card-index">{{ "%02d"|format(loop.index) }}</span>
+            <h3>{{ format.label }}</h3>
+            <p>{{ format.text }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="involved">
+    <div class="shell">
+      <div class="split-band">
+        <div>
+          <p class="section-kicker">Get involved</p>
+          <h3>Bring a topic, a venue, or a pair of helping hands.</h3>
+          <p>
+            PyCarinthia should be shaped by the people who show up. Talks can be
+            polished or rough. Demos can be small. Organizing can be as simple as
+            greeting newcomers or helping find the next room.
+          </p>
+          <div class="actions">
+            <a class="button" href="{{ PROPOSAL_URL }}">Propose a talk</a>
+          </div>
+        </div>
+        <div class="dark-panel">
+          <p class="section-kicker">Open community</p>
+          <h3>Beginners, professionals, students, researchers, and hobbyists.</h3>
+          <p>
+            Talks are in English by default so international students and
+            visitors can participate. The shared baseline is curiosity,
+            respect, and an interest in Python.
+          </p>
+          <div class="actions">
+            <a class="button secondary" href="{{ SITEURL }}/about/">About the group</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="resources">
+    <div class="shell">
+      <div class="section-header">
+        <p class="section-kicker">Useful links</p>
+        <h2 class="section-heading">Start learning, then come share.</h2>
+        <p class="lead">
+          A small starter set from the local Markdown collection. More links can
+          be added without touching the page template.
+        </p>
+      </div>
+      {% set resources = articles|resource_articles %}
+      <div class="resource-grid">
+        {% for resource in resources[:6] %}
+          <a class="resource-card" href="{{ resource.external_url }}">
+            <p class="card-kicker">{{ resource.resource_category }}</p>
+            <h3>{{ resource.title }}</h3>
+            <p>{{ resource.description }}</p>
+          </a>
+        {% endfor %}
+      </div>
+      <div class="actions">
+        <a class="button dark" href="{{ SITEURL }}/resources/">Browse all resources</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="connect">
+    <div class="shell">
+      <div class="section-header">
+        <p class="section-kicker">Stay connected</p>
+        <h2 class="section-heading">One place for Python in Carinthia.</h2>
+        <p class="lead">
+          Follow the calendar, suggest a session, offer a venue, or send a quick
+          note. The group starts small and grows through useful conversations.
+        </p>
+      </div>
+      <div class="connect-grid">
+        {% for link in CONNECT_LINKS %}
+          <a class="connect-card" href="{{ link.href }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>
+            <p class="card-kicker">{{ link.label }}</p>
+            <h3>{{ link.title }}</h3>
+            <p>{{ link.text }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} | {{ SITENAME }}{% endblock %}
+{% block description %}{{ article.description|default(SITEDESCRIPTION) }}{% endblock %}
+
+{% block content %}
+  {% if article.category|string == "events" %}
+    <section class="event-page">
+      <div class="shell">
+        <article>
+          <p class="section-kicker">{{ article.format }}</p>
+          <h1 class="event-title">{{ article.title }}</h1>
+          <div class="event-meta">
+            <span class="pill">{{ article|event_date_long }}</span>
+            <span class="pill">{{ article|event_time }} Vienna time</span>
+            <span class="pill">{{ article.venue }}</span>
+          </div>
+          <div class="prose">
+            {{ article.content }}
+          </div>
+          <div class="event-actions">
+            <a class="button dark" href="{{ SITEURL }}/calendar.ics">Add to calendar</a>
+            {% if article.external_url %}
+              <a class="button light" href="{{ article.external_url }}" target="_blank" rel="noopener noreferrer">RSVP</a>
+            {% endif %}
+            {% if article.map_url %}
+              <a class="button light" href="{{ article.map_url }}" target="_blank" rel="noopener noreferrer">Plan route</a>
+            {% endif %}
+            <a class="button light" href="{{ SITEURL }}/events/">All events</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  {% else %}
+    <section class="event-page">
+      <div class="shell">
+        <article>
+          <p class="section-kicker">{{ article.resource_category|default("resource") }}</p>
+          <h1 class="event-title">{{ article.title }}</h1>
+          <div class="prose">
+            {{ article.content }}
+          </div>
+          {% if article.external_url %}
+            <div class="event-actions">
+              <a class="button dark" href="{{ article.external_url }}">Open resource</a>
+              <a class="button light" href="{{ SITEURL }}/resources/">All resources</a>
+            </div>
+          {% endif %}
+        </article>
+      </div>
+    </section>
+  {% endif %}
+{% endblock %}

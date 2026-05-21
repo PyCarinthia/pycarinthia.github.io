@@ -1,0 +1,11 @@
+.venv/
+.local/
+.python-version
+output/
+content/_remote/
+__pycache__/
+*.pyc
+.env
+node_modules/
+dist/
+.astro/

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Resources | {{ SITENAME }}{% endblock %}
+{% block description %}Python learning links, AI resources, nearby communities, and ways to support PyCarinthia.{% endblock %}
+
+{% block content %}
+  {% set resources = articles|resource_articles %}
+  <header class="page-hero">
+    <div class="shell">
+      <p class="section-kicker">Resources</p>
+      <h1>Useful links for Python people in Carinthia.</h1>
+      <p>
+        Regional Python communities, learning resources, AI links, and ways to
+        support PyCarinthia.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell">
+      {% for group in resources|group_resources %}
+        <section class="category-group" aria-labelledby="category-{{ group.key }}">
+          <h2 class="category-title" id="category-{{ group.key }}">{{ group.label }}</h2>
+          <div class="resource-grid">
+            {% for resource in group["items"] %}
+              <a class="resource-card" href="{{ resource.external_url }}">
+                <p class="card-kicker">{{ resource.resource_category }}</p>
+                <h3>{{ resource.title }}</h3>
+                <p>{{ resource.description }}</p>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | {{ SITENAME }}{% endblock %}
+{% block description %}Contact PyCarinthia about venues, sponsors, organizing help, and general questions.{% endblock %}
+
+{% block content %}
+  <header class="page-hero">
+    <div class="shell">
+      <p class="section-kicker">Contact</p>
+      <h1>Contact PyCarinthia.</h1>
+      <p>General questions, venue offers, sponsors, and organizing help.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell prose">
+      {% if CONTACT_FORM_URL %}
+        <p>Use the contact form for general PyCarinthia messages.</p>
+        <div class="actions">
+          <a class="button dark" href="{{ CONTACT_FORM_URL }}" target="_blank" rel="noopener noreferrer">Open contact form</a>
+        </div>
+      {% else %}
+        <p>The public contact form is not connected yet. Once the Google Form is ready, set <code>PYCARINTHIA_CONTACT_FORM_URL</code> in the GitHub repository variables and rebuild the site.</p>
+        <p>For urgent legal or data protection matters, use the maintainer contact listed in the <a href="{{ SITEURL }}/imprint/">imprint</a>.</p>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

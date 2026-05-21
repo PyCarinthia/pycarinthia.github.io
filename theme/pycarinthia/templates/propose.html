@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Propose a Talk | {{ SITENAME }}{% endblock %}
+{% block description %}Suggest a PyCarinthia talk, demo, workshop, or lightning introduction.{% endblock %}
+
+{% block content %}
+  <header class="page-hero">
+    <div class="shell">
+      <p class="section-kicker">Talks</p>
+      <h1>Propose a talk or demo.</h1>
+      <p>Short talks, practical demos, workshops, lightning introductions, and project stories are welcome.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell prose">
+      {% if PROPOSAL_FORM_URL %}
+        <p>Use the proposal form to suggest a session for an upcoming PyCarinthia meetup.</p>
+        <div class="actions">
+          <a class="button dark" href="{{ PROPOSAL_FORM_URL }}" target="_blank" rel="noopener noreferrer">Open proposal form</a>
+        </div>
+      {% else %}
+        <p>The proposal form is not connected yet. Once the Google Form is ready, set <code>PYCARINTHIA_PROPOSAL_FORM_URL</code> in the GitHub repository variables and rebuild the site.</p>
+      {% endif %}
+
+      <h2>Useful proposal details</h2>
+      <p>Ask for a title, short abstract, speaker name, contact email, preferred format, expected level, language, and whether the session needs anything special from the venue.</p>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Venue map</title>
+    <link rel="stylesheet" href="/assets/vendor/leaflet.css">
+    <style>
+      html,
+      body,
+      #map {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        overflow: hidden;
+        background: #e8edf0;
+      }
+
+      .leaflet-container {
+        color: #111827;
+        font-family: inherit;
+      }
+
+      .leaflet-popup-content-wrapper {
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgb(15 23 42 / 0.18);
+      }
+
+      .leaflet-popup-content {
+        margin: 9px 12px;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map" aria-label="Venue map"></div>
+    <script src="/assets/vendor/leaflet.js"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const lat = Number.parseFloat(params.get("lat") || "46.6149");
+      const lon = Number.parseFloat(params.get("lon") || "14.2654");
+      const zoom = Number.parseInt(params.get("zoom") || "16", 10);
+      const label = params.get("label") || "Venue";
+
+      const map = L.map("map", {
+        scrollWheelZoom: false,
+        zoomControl: true,
+      }).setView([lat, lon], zoom);
+
+      L.tileLayer("https://maps.wien.gv.at/basemap/bmapgrau/normal/google3857/{z}/{y}/{x}.png", {
+        attribution: '&copy; <a href="https://basemap.at/" target="_blank" rel="noopener">basemap.at</a>',
+        maxZoom: 19,
+      }).addTo(map);
+
+      L.circleMarker([lat, lon], {
+        radius: 9,
+        color: "#ffffff",
+        weight: 3,
+        fillColor: "#d63b2f",
+        fillOpacity: 1,
+      })
+        .addTo(map)
+        .bindPopup(label)
+        .openPopup();
+    </script>
+  </body>
+</html>

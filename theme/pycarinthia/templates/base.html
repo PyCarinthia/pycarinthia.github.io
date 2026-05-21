@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ SITENAME }} - Python User Group Carinthia{% endblock %}</title>
+    <meta name="description" content="{% block description %}{{ SITEDESCRIPTION }}{% endblock %}">
+    <meta name="author" content="{{ SITENAME }}">
+    <meta property="og:site_name" content="{{ SITENAME }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block og_title %}{{ SITENAME }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ SITEDESCRIPTION }}{% endblock %}">
+    <meta property="og:image" content="{{ SITEURL }}/assets/hero-carinthia.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="https://www.python.org/static/favicon.ico">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
+    <link rel="alternate" type="application/json" href="{{ SITEURL }}/api/events.json" title="PyCarinthia events">
+    <link rel="alternate" type="text/calendar" href="{{ SITEURL }}/calendar.ics" title="PyCarinthia calendar">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "{{ SITENAME }}",
+        "description": "{{ SITEDESCRIPTION }}",
+        "areaServed": "Carinthia, Austria",
+        "url": "{{ SITEURL or 'https://pycarinthia.com' }}",
+        {% if CONTACT_EMAIL %}"email": "{{ CONTACT_EMAIL }}",{% endif %}
+        "sameAs": []
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="{{ SITEURL }}/" aria-label="PyCarinthia home">
+          <span class="brand-mark" aria-hidden="true">py</span>
+          <span>PyCarinthia</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="{{ SITEURL }}/">Home</a>
+          <a href="{{ SITEURL }}/events/">Events</a>
+          <a href="{{ SITEURL }}/about/">About</a>
+          <a href="{{ SITEURL }}/resources/">Resources</a>
+        </nav>
+        <details class="mobile-nav">
+          <summary aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </summary>
+          <div class="mobile-nav-panel">
+            <a href="{{ SITEURL }}/">Home</a>
+            <a href="{{ SITEURL }}/events/">Events</a>
+            <a href="{{ SITEURL }}/about/">About</a>
+            <a href="{{ SITEURL }}/resources/">Resources</a>
+          </div>
+        </details>
+      </div>
+    </header>
+    <main id="main">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <a class="footer-brand" href="{{ SITEURL }}/">PyCarinthia</a>
+          <p>
+            A volunteer-run Python user group for Carinthia. Open to beginners,
+            working developers, students, researchers, builders, and curious people.
+          </p>
+        </div>
+        <div>
+          <h2>Navigate</h2>
+          <a href="{{ SITEURL }}/events/">Events</a>
+          <a href="{{ SITEURL }}/about/">About</a>
+          <a href="{{ SITEURL }}/resources/">Resources</a>
+          <a href="{{ SITEURL }}/imprint/">Imprint</a>
+          <a href="{{ SITEURL }}/privacy/">Data processing</a>
+          <a href="{{ SITEURL }}/api/events.json">Events JSON</a>
+        </div>
+        <div>
+          <h2>Connect</h2>
+          {% for link in CONNECT_LINKS %}
+            {% if link.external %}
+              <a href="{{ link.href }}" target="_blank" rel="noopener noreferrer">{{ link.title }}</a>
+            {% else %}
+              <a href="{{ SITEURL }}{{ link.href }}">{{ link.title }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>&copy; {{ CURRENTYEAR }} PyCarinthia</span>
+        <span>Built with Python and Pelican.</span>
+      </div>
+    </footer>
+  </body>
+</html>
