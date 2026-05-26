@@ -1,12 +1,19 @@
 from __future__ import annotations
 
 import os
-from datetime import date, datetime
+from datetime import date, datetime, timedelta, timezone
+from urllib.parse import urlencode
 from zoneinfo import ZoneInfo
 
 from dateutil import parser
 
 VIENNA = ZoneInfo("Europe/Vienna")
+
+_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+_MONTHS = ["January", "February", "March", "April", "May", "June",
+           "July", "August", "September", "October", "November", "December"]
+_MONTHS_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
 def meta_value(item: object, key: str, default: str = "") -> str:
@@ -72,12 +79,12 @@ def past_events(articles: list[object]) -> list[object]:
 
 def event_month(article: object) -> str:
     dt = event_datetime(article)
-    return dt.strftime("%b") if dt else "TBA"
+    return _MONTHS_SHORT[dt.month - 1] if dt else "TBA"
 
 
 def event_day(article: object) -> str:
     dt = event_datetime(article)
-    return dt.strftime("%d") if dt else "--"
+    return str(dt.day) if dt else "--"
 
 
 def event_time(article: object) -> str:
@@ -87,17 +94,56 @@ def event_time(article: object) -> str:
 
 def event_date_long(article: object) -> str:
     dt = event_datetime(article)
-    return dt.strftime("%A, %-d %B %Y") if dt else "Date TBA"
+    if not dt:
+        return "Date TBA"
+    return f"{_DAYS[dt.weekday()]}, {dt.day} {_MONTHS[dt.month - 1]} {dt.year}"
 
 
 def event_date_short(article: object) -> str:
     dt = event_datetime(article)
-    return dt.strftime("%-d %b %Y") if dt else "Date TBA"
+    if not dt:
+        return "Date TBA"
+    return f"{dt.day} {_MONTHS_SHORT[dt.month - 1]} {dt.year}"
 
 
 def resource_articles(articles: list[object]) -> list[object]:
     resources = category_articles(articles, "resources")
     return sorted(resources, key=lambda article: (int(meta_value(article, "order", "100")), article.title))
+
+
+def gcal_url(article: object) -> str:
+    UTC = timezone.utc
+    start = event_datetime(article)
+    if not start:
+        return ""
+
+    end_raw = meta_value(article, "end_date")
+    if end_raw:
+        end_dt = parser.parse(str(end_raw))
+        if end_dt.tzinfo is None:
+            end_dt = end_dt.replace(tzinfo=VIENNA)
+        end_dt = end_dt.astimezone(UTC)
+    else:
+        end_dt = start.astimezone(UTC) + timedelta(hours=2)
+
+    start_utc = start.astimezone(UTC)
+    fmt = "%Y%m%dT%H%M%SZ"
+
+    title = getattr(article, "title", "")
+    description = meta_value(article, "description", "")
+    venue = meta_value(article, "venue", "")
+    address = meta_value(article, "address", "")
+    city = meta_value(article, "city", "")
+    location = ", ".join(part for part in [venue, address, city] if part)
+
+    params = {
+        "action": "TEMPLATE",
+        "text": title,
+        "dates": f"{start_utc.strftime(fmt)}/{end_dt.strftime(fmt)}",
+        "details": description,
+        "location": location,
+    }
+    return "https://calendar.google.com/calendar/render?" + urlencode(params)
 
 
 def group_resources(resources: list[object]) -> list[dict[str, object]]:

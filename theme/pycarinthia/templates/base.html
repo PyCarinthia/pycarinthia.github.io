@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ SITENAME }} - Python User Group Carinthia{% endblock %}</title>
+    <title>{% block title %}{{ SITENAME }} - Python &amp; AI Community Carinthia{% endblock %}</title>
     <meta name="description" content="{% block description %}{{ SITEDESCRIPTION }}{% endblock %}">
     <meta name="author" content="{{ SITENAME }}">
     <meta property="og:site_name" content="{{ SITENAME }}">
@@ -23,9 +23,8 @@
         "name": "{{ SITENAME }}",
         "description": "{{ SITEDESCRIPTION }}",
         "areaServed": "Carinthia, Austria",
-        "url": "{{ SITEURL or 'https://pycarinthia.com' }}",
-        {% if CONTACT_EMAIL %}"email": "{{ CONTACT_EMAIL }}",{% endif %}
-        "sameAs": []
+        "url": "{{ SITEURL or 'https://pycarinthia.com' }}"
+        {% if CONTACT_EMAIL %},"email": "{{ CONTACT_EMAIL }}"{% endif %}
       }
     </script>
   </head>
@@ -34,8 +33,7 @@
     <header class="site-header">
       <div class="shell header-inner">
         <a class="brand" href="{{ SITEURL }}/" aria-label="PyCarinthia home">
-          <span class="brand-mark" aria-hidden="true">py</span>
-          <span>PyCarinthia</span>
+          <span class="brand-brace" aria-hidden="true">{</span>PyCarinthia<span class="brand-brace" aria-hidden="true">}</span>
         </a>
         <nav class="desktop-nav" aria-label="Main navigation">
           <a href="{{ SITEURL }}/">Home</a>
@@ -66,8 +64,8 @@
         <div>
           <a class="footer-brand" href="{{ SITEURL }}/">PyCarinthia</a>
           <p>
-            A volunteer-run Python user group for Carinthia. Open to beginners,
-            working developers, students, researchers, builders, and curious people.
+            A volunteer-run Python and AI community for Carinthia. Open to beginners,
+            working developers, students, researchers, AI builders, and curious people.
           </p>
         </div>
         <div>
@@ -77,7 +75,6 @@
           <a href="{{ SITEURL }}/resources/">Resources</a>
           <a href="{{ SITEURL }}/imprint/">Imprint</a>
           <a href="{{ SITEURL }}/privacy/">Data processing</a>
-          <a href="{{ SITEURL }}/api/events.json">Events JSON</a>
         </div>
         <div>
           <h2>Connect</h2>

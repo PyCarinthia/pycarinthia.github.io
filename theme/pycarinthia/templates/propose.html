@@ -15,16 +15,18 @@
   <section class="section">
     <div class="shell prose">
       {% if PROPOSAL_FORM_URL %}
-        <p>Use the proposal form to suggest a session for an upcoming PyCarinthia meetup.</p>
+        <p>Use the proposal form to suggest a session. We welcome all levels and topics - you do not need to be an expert, and you do not need a finished project.</p>
         <div class="actions">
           <a class="button dark" href="{{ PROPOSAL_FORM_URL }}" target="_blank" rel="noopener noreferrer">Open proposal form</a>
         </div>
       {% else %}
-        <p>The proposal form is not connected yet. Once the Google Form is ready, set <code>PYCARINTHIA_PROPOSAL_FORM_URL</code> in the GitHub repository variables and rebuild the site.</p>
+        <p>The proposal form is not available right now. Reach out via the <a href="{{ SITEURL }}/contact/">contact page</a> in the meantime.</p>
       {% endif %}
 
-      <h2>Useful proposal details</h2>
-      <p>Ask for a title, short abstract, speaker name, contact email, preferred format, expected level, language, and whether the session needs anything special from the venue.</p>
+      <h2>What makes a good session</h2>
+      <p>A good session teaches something concrete or starts a useful conversation. It does not have to be polished. A rough demo with a clear lesson is often more valuable than a rehearsed slide deck.</p>
+      <p>Topics that work well: a Python library you use daily, an AI tool or workflow, a production story (including what went wrong), a data project, an open source contribution, or anything you wish someone had explained to you earlier.</p>
+      <p>Formats: a 20-minute talk, a 5-minute lightning intro, a hands-on workshop, or an open discussion. If you are unsure, suggest it anyway and we will figure out the format together.</p>
     </div>
   </section>
 {% endblock %}

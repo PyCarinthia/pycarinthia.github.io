@@ -19,7 +19,13 @@
             {{ article.content }}
           </div>
           <div class="event-actions">
-            <a class="button dark" href="{{ SITEURL }}/calendar.ics">Add to calendar</a>
+            <details class="cal-dropdown">
+              <summary class="button dark">Add to calendar</summary>
+              <div class="cal-options">
+                <a href="{{ article|gcal_url }}" target="_blank" rel="noopener noreferrer">Google Calendar</a>
+                <a href="{{ SITEURL }}/calendar.ics">Download .ics</a>
+              </div>
+            </details>
             {% if article.external_url %}
               <a class="button light" href="{{ article.external_url }}" target="_blank" rel="noopener noreferrer">RSVP</a>
             {% endif %}
