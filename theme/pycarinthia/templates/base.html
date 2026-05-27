@@ -33,7 +33,7 @@
     <header class="site-header">
       <div class="shell header-inner">
         <a class="brand" href="{{ SITEURL }}/" aria-label="PyCarinthia home">
-          <span class="brand-code brand-desktop" aria-hidden="true">py_carinthia<span class="brand-op">&nbsp;= [</span><span class="brand-typed"></span><span class="brand-cursor">_</span><span class="brand-op">]</span></span>
+          <span class="brand-code brand-desktop" aria-hidden="true">py_carinthia<span class="brand-op">&nbsp;=&nbsp;[</span><span class="brand-typed"></span><span class="brand-cursor">_</span><span class="brand-op">]</span></span>
           <span class="brand-code brand-mobile" aria-hidden="true">py_carinthia<span class="brand-op">&nbsp;=&nbsp;</span><span class="brand-typed-single"></span><span class="brand-cursor brand-cursor-single">_</span></span>
           <span class="visually-hidden">PyCarinthia</span>
         </a>
@@ -173,45 +173,46 @@
         if (!el) return;
 
         var TYPING = 110;
+        var PAUSE_BEFORE_COMMA = 600;
+        var PAUSE_COMMA = 600;
         var DELETING = 55;
-        var PAUSE_WORD = 700;
-        var PAUSE_FULL = 2200;
+        var PAUSE_FULL = 3500;
         var PAUSE_RESTART = 500;
 
+        // Build cumulative targets: ['python', 'python, ai', 'python, ai, community']
+        var targets = words.map(function (_, i) {
+          return words.slice(0, i + 1).join(', ');
+        });
+
         var wordIdx = 0;
-        var charIdx = 0;
-        var done = [];
-        var typing = true;
+        var deleting = false;
 
         function tick() {
-          if (typing) {
-            var word = words[wordIdx];
-            charIdx++;
-            el.textContent = done.concat([word.slice(0, charIdx)]).join(', ');
-            if (charIdx === word.length) {
-              done.push(word);
+          var current = el.textContent;
+          var target = targets[wordIdx] || '';
+
+          if (!deleting) {
+            if (current.length < target.length) {
+              var nextChar = target[current.length];
+              el.textContent = target.slice(0, current.length + 1);
+              setTimeout(tick, nextChar === ',' ? PAUSE_COMMA : TYPING);
+            } else {
               wordIdx++;
-              charIdx = 0;
               if (wordIdx < words.length) {
-                setTimeout(tick, PAUSE_WORD);
+                setTimeout(tick, PAUSE_BEFORE_COMMA);
               } else {
-                setTimeout(function () { typing = false; tick(); }, PAUSE_FULL);
+                setTimeout(function () { deleting = true; tick(); }, PAUSE_FULL);
               }
-              return;
             }
           } else {
-            var text = el.textContent;
-            if (text.length > 0) {
-              el.textContent = text.slice(0, -1);
+            if (current.length > 0) {
+              el.textContent = current.slice(0, -1);
               setTimeout(tick, DELETING);
-              return;
             } else {
-              done = []; wordIdx = 0; charIdx = 0; typing = true;
+              wordIdx = 0; deleting = false;
               setTimeout(tick, PAUSE_RESTART);
-              return;
             }
           }
-          setTimeout(tick, TYPING);
         }
 
         setTimeout(tick, 1200);
