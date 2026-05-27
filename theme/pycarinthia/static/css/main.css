@@ -202,6 +202,39 @@ a {
   line-height: 1;
 }
 
+.brand-op {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.brand-typed,
+.brand-typed-single {
+  color: var(--lake);
+}
+
+.brand-cursor {
+  color: var(--lake);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.brand-mobile {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .brand-desktop {
+    display: none;
+  }
+  .brand-mobile {
+    display: inline-flex;
+  }
+}
+
 .desktop-nav {
   display: flex;
   gap: 28px;
@@ -427,6 +460,7 @@ a {
 
 .button.light {
   border-color: var(--line);
+  color: var(--ink);
   background: var(--surface);
 }
 
