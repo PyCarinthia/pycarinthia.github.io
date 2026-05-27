@@ -108,7 +108,7 @@ RSVP_PLATFORM_URL = (
 ).strip()
 NEWSLETTER_URL = (
     os.environ.get("PYCARINTHIA_NEWSLETTER_URL")
-    or RSVP_PLATFORM_URL
+    or "https://docs.google.com/forms/d/e/1FAIpQLSeJ5nA5ygbk7nOagc4Zy9OS2inouvzudlgtEAUhx3YU3178IQ/viewform"
 ).strip()
 CONTACT_URL = "/contact/"
 PROPOSAL_URL = "/propose/"
