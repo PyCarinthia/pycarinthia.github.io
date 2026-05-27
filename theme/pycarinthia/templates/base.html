@@ -36,25 +36,39 @@
           <span class="brand-code" aria-hidden="true">(py_carinthia,)</span>
           <span class="visually-hidden">PyCarinthia</span>
         </a>
-        <nav class="desktop-nav" aria-label="Main navigation">
-          <a href="{{ SITEURL }}/">Home</a>
-          <a href="{{ SITEURL }}/events/">Events</a>
-          <a href="{{ SITEURL }}/about/">About</a>
-          <a href="{{ SITEURL }}/resources/">Resources</a>
-        </nav>
-        <details class="mobile-nav">
-          <summary aria-label="Open navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </summary>
-          <div class="mobile-nav-panel">
+        <div class="header-actions">
+          <nav class="desktop-nav" aria-label="Main navigation">
             <a href="{{ SITEURL }}/">Home</a>
             <a href="{{ SITEURL }}/events/">Events</a>
             <a href="{{ SITEURL }}/about/">About</a>
             <a href="{{ SITEURL }}/resources/">Resources</a>
-          </div>
-        </details>
+          </nav>
+          <button class="theme-toggle desktop-theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" data-theme-toggle>
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-thumb"></span>
+            </span>
+            <span class="visually-hidden" data-theme-toggle-label>Switch to dark theme</span>
+          </button>
+          <details class="mobile-nav">
+            <summary aria-label="Open navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+            </summary>
+            <div class="mobile-nav-panel">
+              <a href="{{ SITEURL }}/">Home</a>
+              <a href="{{ SITEURL }}/events/">Events</a>
+              <a href="{{ SITEURL }}/about/">About</a>
+              <a href="{{ SITEURL }}/resources/">Resources</a>
+              <button class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" data-theme-toggle>
+                <span class="theme-toggle-track" aria-hidden="true">
+                  <span class="theme-toggle-thumb"></span>
+                </span>
+                <span class="visually-hidden" data-theme-toggle-label>Switch to dark theme</span>
+              </button>
+            </div>
+          </details>
+        </div>
       </div>
     </header>
     <main id="main">
@@ -93,5 +107,64 @@
         <span>Built with Python and Pelican.</span>
       </div>
     </footer>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+        var toggles = Array.prototype.slice.call(document.querySelectorAll("[data-theme-toggle]"));
+        var manualTheme = null;
+
+        function getSystemTheme() {
+          return systemTheme.matches ? "dark" : "light";
+        }
+
+        function getActiveTheme() {
+          return root.dataset.theme || getSystemTheme();
+        }
+
+        function updateControls(theme) {
+          var isDark = theme === "dark";
+          root.style.colorScheme = theme;
+
+          toggles.forEach(function (toggle) {
+            var label = isDark ? "Switch to light theme" : "Switch to dark theme";
+            toggle.dataset.themeState = theme;
+            toggle.setAttribute("aria-label", label);
+            toggle.setAttribute("aria-pressed", String(isDark));
+
+            var hiddenLabel = toggle.querySelector("[data-theme-toggle-label]");
+            if (hiddenLabel) {
+              hiddenLabel.textContent = label;
+            }
+          });
+        }
+
+        function setManualTheme(theme) {
+          manualTheme = theme;
+          root.dataset.theme = theme;
+          updateControls(theme);
+        }
+
+        function syncSystemTheme() {
+          if (!manualTheme) {
+            updateControls(getSystemTheme());
+          }
+        }
+
+        toggles.forEach(function (toggle) {
+          toggle.addEventListener("click", function () {
+            setManualTheme(getActiveTheme() === "dark" ? "light" : "dark");
+          });
+        });
+
+        syncSystemTheme();
+
+        if (systemTheme.addEventListener) {
+          systemTheme.addEventListener("change", syncSystemTheme);
+        } else if (systemTheme.addListener) {
+          systemTheme.addListener(syncSystemTheme);
+        }
+      })();
+    </script>
   </body>
 </html>
