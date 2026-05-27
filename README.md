@@ -10,8 +10,8 @@ Python-native static site for PyCarinthia, built with Pelican.
 With `uv`:
 
 ```sh
-.local/bin/uv sync
-.local/bin/uv run python tools/build.py
+uv sync
+uv run python tools/build.py
 ```
 
 With an existing Python installation:
@@ -28,7 +28,7 @@ The generated static site is written to `output/`.
 ## Run locally
 
 ```sh
-.local/bin/uv run python tools/build.py --serve
+uv run python tools/build.py --serve
 ```
 
 Then open `http://localhost:8000`.
