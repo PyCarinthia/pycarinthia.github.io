@@ -68,6 +68,17 @@ a {
   transform: translateY(0);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .shell {
   width: min(1120px, calc(100% - 40px));
   margin-inline: auto;
@@ -100,18 +111,17 @@ a {
   letter-spacing: 0;
 }
 
-.brand-brace {
-  font-weight: 750;
+.brand {
+  white-space: nowrap;
 }
 
-.brand-brace:first-child {
-  color: var(--lake);
-  margin-right: 0.3em;
-}
-
-.brand-brace:last-child {
-  color: var(--coral);
-  margin-left: 0.3em;
+.brand-code {
+  display: inline-flex;
+  align-items: center;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 1rem;
+  font-weight: 850;
+  line-height: 1;
 }
 
 .desktop-nav {
