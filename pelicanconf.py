@@ -13,6 +13,7 @@ from jinja_filters import (  # noqa: E402
     event_time,
     event_date_long,
     event_date_short,
+    gcal_url,
     group_resources,
     past_events,
     resource_articles,
@@ -23,8 +24,8 @@ AUTHOR = "PyCarinthia"
 SITENAME = "PyCarinthia"
 SITEURL = ""
 SITEDESCRIPTION = (
-    "A Python community and user group in Carinthia, Austria. Meetups, talks, "
-    "workshops, and friendly conversation for everyone curious about Python."
+    "A Python and AI community in Carinthia, Austria. Meetups, talks, "
+    "workshops, and hands-on sessions for everyone building with Python and AI."
 )
 
 PATH = "content"
@@ -85,6 +86,7 @@ JINJA_FILTERS = {
     "event_time": event_time,
     "event_date_long": event_date_long,
     "event_date_short": event_date_short,
+    "gcal_url": gcal_url,
     "group_resources": group_resources,
     "past_events": past_events,
     "resource_articles": resource_articles,
@@ -104,6 +106,10 @@ RSVP_PLATFORM_URL = (
     os.environ.get("PYCARINTHIA_RSVP_PLATFORM_URL")
     or "https://docs.google.com/forms/d/e/1FAIpQLScMr_JMksm4Awxjmjms07zOjZducAnPaH0AwYO68BebWPGVcQ/viewform"
 ).strip()
+NEWSLETTER_URL = (
+    os.environ.get("PYCARINTHIA_NEWSLETTER_URL")
+    or RSVP_PLATFORM_URL
+).strip()
 CONTACT_URL = "/contact/"
 PROPOSAL_URL = "/propose/"
 DEFAULT_CITY = "Klagenfurt"
@@ -115,7 +121,7 @@ VENUE_MAP_EMBED = (
 FORMATS = [
     {
         "label": "Talks",
-        "text": "One focused session on a Python library, production story, data workflow, AI tool, or project people can learn from.",
+        "text": "One focused session on a Python library, AI tool, LLM application, production story, or data workflow people can learn from.",
     },
     {
         "label": "Lightning talks",
@@ -127,17 +133,11 @@ FORMATS = [
     },
     {
         "label": "Social evenings",
-        "text": "Unstructured time after the program for questions, hiring chats, project ideas, and meeting other Python people nearby.",
+        "text": "Unstructured time after the program for questions, hiring chats, AI project ideas, and meeting other Python and AI people nearby.",
     },
 ]
 
 CONNECT_LINKS = [
-    {
-        "label": "Contact",
-        "title": "Contact form",
-        "href": CONTACT_URL,
-        "text": "General questions, venues, sponsors, and organizing help.",
-    },
     {
         "label": "Talks",
         "title": "Proposal form",
@@ -145,16 +145,15 @@ CONNECT_LINKS = [
         "text": "Suggest a talk, demo, workshop, or lightning introduction.",
     },
     {
-        "label": "RSVP",
-        "title": "Event registrations",
-        "href": RSVP_PLATFORM_URL,
-        "text": "RSVP for the next meetup and receive updates once details are confirmed.",
-        "external": True,
+        "label": "Contact",
+        "title": "Contact form",
+        "href": CONTACT_URL,
+        "text": "Questions, venue offers, sponsors, and organizing help.",
     },
     {
         "label": "Communities",
-        "title": "Regional Python links",
+        "title": "Regional communities",
         "href": "/resources/#category-community",
-        "text": "Python, PyData, Django, and PyLadies groups across Austria plus nearby Slovenia and Italy.",
+        "text": "Python, PyData, AI, and ML groups across Austria, Slovenia, and Italy.",
     },
 ]

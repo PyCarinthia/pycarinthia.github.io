@@ -15,13 +15,12 @@
   <section class="section">
     <div class="shell prose">
       {% if CONTACT_FORM_URL %}
-        <p>Use the contact form for general PyCarinthia messages.</p>
+        <p>Use the contact form for general PyCarinthia messages. We read everything and try to respond within a few days.</p>
         <div class="actions">
           <a class="button dark" href="{{ CONTACT_FORM_URL }}" target="_blank" rel="noopener noreferrer">Open contact form</a>
         </div>
       {% else %}
-        <p>The public contact form is not connected yet. Once the Google Form is ready, set <code>PYCARINTHIA_CONTACT_FORM_URL</code> in the GitHub repository variables and rebuild the site.</p>
-        <p>For urgent legal or data protection matters, use the maintainer contact listed in the <a href="{{ SITEURL }}/imprint/">imprint</a>.</p>
+        <p>The contact form is not available right now. For legal or data protection matters, use the maintainer contact in the <a href="{{ SITEURL }}/imprint/">imprint</a>.</p>
       {% endif %}
     </div>
   </section>

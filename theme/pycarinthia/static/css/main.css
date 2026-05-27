@@ -94,23 +94,24 @@ a {
 .footer-brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   color: var(--ink);
-  font-weight: 850;
+  font-weight: 750;
   text-decoration: none;
   letter-spacing: 0;
 }
 
-.brand-mark {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--python-blue), var(--lake));
-  color: #fff;
-  font-size: 0.88rem;
-  letter-spacing: 0;
+.brand-brace {
+  font-weight: 750;
+}
+
+.brand-brace:first-child {
+  color: var(--lake);
+  margin-right: 0.3em;
+}
+
+.brand-brace:last-child {
+  color: var(--coral);
+  margin-left: 0.3em;
 }
 
 .desktop-nav {
@@ -321,7 +322,6 @@ a {
 .event-panel {
   display: grid;
   grid-template-columns: 210px minmax(0, 1fr);
-  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -338,6 +338,7 @@ a {
   background:
     linear-gradient(135deg, rgba(8, 127, 122, 0.4), rgba(54, 105, 148, 0.28)),
     var(--lake-dark);
+  border-radius: var(--radius) 0 0 var(--radius);
 }
 
 .date-tile .month {
@@ -398,6 +399,57 @@ a {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 24px;
+}
+
+.cal-dropdown {
+  position: relative;
+}
+
+.cal-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.cal-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.cal-dropdown summary::after {
+  content: " ▾";
+  font-size: 0.75em;
+}
+
+.cal-dropdown[open] summary::after {
+  content: " ▴";
+}
+
+.cal-options {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.cal-options a {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cal-options a:hover {
+  background: var(--mist);
+  color: var(--lake-dark);
 }
 
 .map-frame {
