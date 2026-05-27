@@ -15,6 +15,7 @@
   --header-border: rgba(215, 227, 223, 0.86);
   --button-dark-bg: #06474d;
   --button-dark-text: #ffffff;
+  --button-primary-text: #122527;
   --shadow: 0 24px 60px rgba(6, 71, 77, 0.14);
   --hover-shadow: 0 14px 34px rgba(6, 71, 77, 0.1);
   --radius: 6px;
@@ -39,6 +40,7 @@
     --header-border: rgba(40, 71, 76, 0.9);
     --button-dark-bg: #0f555c;
     --button-dark-text: #ffffff;
+    --button-primary-text: #122527;
     --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
     --hover-shadow: 0 14px 34px rgba(0, 0, 0, 0.26);
     color-scheme: dark;
@@ -62,6 +64,7 @@ html[data-theme="light"] {
   --header-border: rgba(215, 227, 223, 0.86);
   --button-dark-bg: #06474d;
   --button-dark-text: #ffffff;
+  --button-primary-text: #122527;
   --shadow: 0 24px 60px rgba(6, 71, 77, 0.14);
   --hover-shadow: 0 14px 34px rgba(6, 71, 77, 0.1);
   color-scheme: light;
@@ -84,6 +87,7 @@ html[data-theme="dark"] {
   --header-border: rgba(40, 71, 76, 0.9);
   --button-dark-bg: #0f555c;
   --button-dark-text: #ffffff;
+  --button-primary-text: #122527;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
   --hover-shadow: 0 14px 34px rgba(0, 0, 0, 0.26);
   color-scheme: dark;
@@ -273,10 +277,13 @@ a {
 }
 
 .mobile-nav summary {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   width: 42px;
   height: 42px;
-  place-items: center;
   list-style: none;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -292,6 +299,7 @@ a {
   width: 18px;
   height: 2px;
   background: var(--ink);
+  border-radius: 1px;
 }
 
 .mobile-nav-panel {
@@ -396,7 +404,7 @@ a {
   border: 1px solid transparent;
   border-radius: var(--radius);
   padding: 11px 18px;
-  color: var(--ink);
+  color: var(--button-primary-text);
   background: var(--sun);
   font-size: 0.94rem;
   font-weight: 850;
