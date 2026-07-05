@@ -13,7 +13,11 @@
           <div class="event-meta">
             <span class="pill">{{ article|event_date_long }}</span>
             <span class="pill">{{ article|event_time }} Vienna time</span>
-            <span class="pill">{{ article.venue }}</span>
+            {% if article.map_url %}
+              <a class="pill pill--link" href="{{ article.map_url }}" target="_blank" rel="noopener noreferrer">{{ article.venue }}</a>
+            {% else %}
+              <span class="pill">{{ article.venue }}</span>
+            {% endif %}
           </div>
           <div class="prose">
             {{ article.content }}
@@ -34,6 +38,14 @@
             {% endif %}
             <a class="button light" href="{{ SITEURL }}/events/">All events</a>
           </div>
+          {% if article.lat and article.lon %}
+            <div class="map-frame" aria-label="Map of {{ article.city }}">
+              <iframe
+                title="Map around {{ article.venue }}"
+                src="/assets/basemap.html?lat={{ article.lat }}&lon={{ article.lon }}&zoom=16&label={{ article.venue|urlencode }}"
+                loading="lazy"></iframe>
+            </div>
+          {% endif %}
         </article>
       </div>
     </section>

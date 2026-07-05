@@ -564,6 +564,18 @@ a {
   font-weight: 730;
 }
 
+a.pill--link {
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+a.pill--link:hover,
+a.pill--link:focus-visible {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
 .event-body p {
   max-width: 760px;
   margin: 0;

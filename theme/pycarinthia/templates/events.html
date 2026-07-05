@@ -29,7 +29,7 @@
             <a class="event-card" href="{{ SITEURL }}/{{ event.url }}">
               <time datetime="{{ event.event_date }}">{{ event|event_date_long }} - {{ event|event_time }}</time>
               <h2>{{ event.title }}</h2>
-              <p>{{ event.venue }}, {{ event.city }}</p>
+              <p>{{ event.venue }}</p>
               <p>{{ event.description }}</p>
             </a>
           {% endfor %}
@@ -52,7 +52,7 @@
             <a class="event-card" href="{{ SITEURL }}/{{ event.url }}">
               <time datetime="{{ event.event_date }}">{{ event|event_date_short }}</time>
               <h3>{{ event.title }}</h3>
-              <p>{{ event.venue }}, {{ event.city }}</p>
+              <p>{{ event.venue }}</p>
               <p>{{ event.description }}</p>
             </a>
           {% endfor %}

@@ -112,6 +112,8 @@ def sync_remote_content() -> None:
                 "Description": description,
                 "External_url": row.get("externalUrl") or row.get("external_url") or row.get("url"),
                 "Map_url": row.get("mapUrl") or row.get("map_url"),
+                "Lat": row.get("lat") or row.get("latitude"),
+                "Lon": row.get("lon") or row.get("lng") or row.get("longitude"),
             },
             clean_text(row.get("body")) or description,
         )
@@ -185,6 +187,8 @@ def load_events() -> list[dict[str, Any]]:
                 "description": meta.get("description", ""),
                 "externalUrl": meta.get("external_url", ""),
                 "mapUrl": meta.get("map_url", ""),
+                "lat": meta.get("lat", ""),
+                "lon": meta.get("lon", ""),
                 "source": source,
             }
         )
