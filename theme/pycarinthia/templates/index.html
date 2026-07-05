@@ -40,8 +40,11 @@
             <h3 class="event-title">{{ next_event.title }}</h3>
             <div class="event-meta">
               <span class="pill">{{ next_event|event_date_long }}</span>
-              <span class="pill">{{ next_event.venue }}</span>
-              <span class="pill">{{ next_event.city }}</span>
+              {% if next_event.map_url %}
+                <a class="pill pill--link" href="{{ next_event.map_url }}" target="_blank" rel="noopener noreferrer">{{ next_event.venue }}</a>
+              {% else %}
+                <span class="pill">{{ next_event.venue }}</span>
+              {% endif %}
             </div>
             <p>{{ next_event.description }}</p>
             <div class="event-actions">
@@ -62,11 +65,11 @@
             </div>
           </div>
         </article>
-        {% if next_event.map_url %}
-          <div class="map-frame" aria-label="Map of Klagenfurt">
+        {% if next_event.lat and next_event.lon %}
+          <div class="map-frame" aria-label="Map of {{ next_event.city }}">
             <iframe
               title="Map around {{ next_event.venue }}"
-              src="{{ VENUE_MAP_EMBED }}"
+              src="/assets/basemap.html?lat={{ next_event.lat }}&lon={{ next_event.lon }}&zoom=16&label={{ next_event.venue|urlencode }}"
               loading="lazy"></iframe>
           </div>
         {% endif %}

@@ -113,10 +113,6 @@ NEWSLETTER_URL = (
 CONTACT_URL = "/contact/"
 PROPOSAL_URL = "/propose/"
 DEFAULT_CITY = "Klagenfurt"
-VENUE_MAP_EMBED = (
-    "/assets/basemap.html?lat=46.6149&lon=14.2654&zoom=16"
-    "&label=Lakeside%20Science%20and%20Technology%20Park"
-)
 
 FORMATS = [
     {
