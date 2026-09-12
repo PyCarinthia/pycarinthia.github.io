@@ -31,7 +31,7 @@
               </div>
             </details>
             {% if article.external_url %}
-              <a class="button light" href="{{ article.external_url }}" target="_blank" rel="noopener noreferrer">RSVP</a>
+              <a class="button light" href="{{ article.external_url }}" target="_blank" rel="noopener noreferrer">{{ article.external_label|default("RSVP") }}</a>
             {% endif %}
             {% if article.map_url %}
               <a class="button light" href="{{ article.map_url }}" target="_blank" rel="noopener noreferrer">Plan route</a>

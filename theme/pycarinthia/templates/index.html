@@ -57,7 +57,7 @@
               </details>
               <a class="button light" href="{{ SITEURL }}/{{ next_event.url }}">Read details</a>
               {% if next_event.external_url %}
-                <a class="button light" href="{{ next_event.external_url }}" target="_blank" rel="noopener noreferrer">RSVP</a>
+                <a class="button light" href="{{ next_event.external_url }}" target="_blank" rel="noopener noreferrer">{{ next_event.external_label|default("RSVP") }}</a>
               {% endif %}
               {% if next_event.map_url %}
                 <a class="button light" href="{{ next_event.map_url }}" target="_blank" rel="noopener noreferrer">Plan route</a>
