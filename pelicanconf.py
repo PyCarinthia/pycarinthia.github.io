@@ -102,7 +102,6 @@ PROPOSAL_FORM_URL = (
     os.environ.get("PYCARINTHIA_PROPOSAL_FORM_URL")
     or "https://docs.google.com/forms/d/e/1FAIpQLSc-QutaLbcQtLzWISr9uv57bqpRBMiz9AM50ScVYflTZWluhA/viewform"
 ).strip()
-MEETUP_GROUP_URL = "https://www.meetup.com/pycarinthia/"
 RSVP_PLATFORM_URL = (
     os.environ.get("PYCARINTHIA_RSVP_PLATFORM_URL")
     or "https://www.meetup.com/pycarinthia/events/316488225/"
@@ -113,6 +112,7 @@ NEWSLETTER_URL = (
 ).strip()
 CONTACT_URL = "/contact/"
 PROPOSAL_URL = "/propose/"
+MEETUP_GROUP_URL = "https://www.meetup.com/pycarinthia/"
 DEFAULT_CITY = "Klagenfurt"
 
 FORMATS = [
