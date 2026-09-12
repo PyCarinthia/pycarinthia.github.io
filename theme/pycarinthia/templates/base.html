@@ -10,9 +10,12 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="{% block og_title %}{{ SITENAME }}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ SITEDESCRIPTION }}{% endblock %}">
-    <meta property="og:image" content="{{ SITEURL }}/assets/hero-carinthia.jpg">
+    <meta property="og:image" content="{{ SITEURL }}/assets/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="https://www.python.org/static/favicon.ico">
+    <link rel="icon" href="{{ SITEURL }}/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ SITEURL }}/assets/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ SITEURL }}/assets/icon-512.png">
+    <link rel="apple-touch-icon" href="{{ SITEURL }}/assets/apple-touch-icon.png">
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
     <link rel="alternate" type="application/json" href="{{ SITEURL }}/api/events.json" title="PyCarinthia events">
     <link rel="alternate" type="text/calendar" href="{{ SITEURL }}/calendar.ics" title="PyCarinthia calendar">
