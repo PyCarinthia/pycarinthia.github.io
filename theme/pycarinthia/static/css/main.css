@@ -201,12 +201,6 @@ a {
   object-fit: contain;
 }
 
-.brand-mark--footer {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-}
-
 .brand-code {
   display: inline-flex;
   align-items: center;
