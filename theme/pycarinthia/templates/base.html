@@ -6,6 +6,16 @@
     <title>{% block title %}{{ SITENAME }} - Python &amp; AI Community Carinthia{% endblock %}</title>
     <meta name="description" content="{% block description %}{{ SITEDESCRIPTION }}{% endblock %}">
     <meta name="author" content="{{ SITENAME }}">
+    <script>
+      (function () {
+        try {
+          var stored = window.localStorage.getItem("pycarinthia-theme");
+          if (stored === "light" || stored === "dark") {
+            document.documentElement.dataset.theme = stored;
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta property="og:site_name" content="{{ SITENAME }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{% block og_title %}{{ SITENAME }}{% endblock %}">
@@ -117,7 +127,15 @@
         var root = document.documentElement;
         var systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
         var toggles = Array.prototype.slice.call(document.querySelectorAll("[data-theme-toggle]"));
+        var STORAGE_KEY = "pycarinthia-theme";
         var manualTheme = null;
+
+        try {
+          var storedTheme = window.localStorage.getItem(STORAGE_KEY);
+          if (storedTheme === "light" || storedTheme === "dark") {
+            manualTheme = storedTheme;
+          }
+        } catch (e) {}
 
         function getSystemTheme() {
           return systemTheme.matches ? "dark" : "light";
@@ -148,6 +166,9 @@
           manualTheme = theme;
           root.dataset.theme = theme;
           updateControls(theme);
+          try {
+            window.localStorage.setItem(STORAGE_KEY, theme);
+          } catch (e) {}
         }
 
         function syncSystemTheme() {
@@ -162,7 +183,12 @@
           });
         });
 
-        syncSystemTheme();
+        if (manualTheme) {
+          root.dataset.theme = manualTheme;
+          updateControls(manualTheme);
+        } else {
+          syncSystemTheme();
+        }
 
         if (systemTheme.addEventListener) {
           systemTheme.addEventListener("change", syncSystemTheme);
