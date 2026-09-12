@@ -5,7 +5,7 @@ End_date: 2026-10-14T19:30:00+02:00
 Category: events
 Slug: kickoff-python-ai-carinthia
 Venue: Omansaal, University of Klagenfurt
-Address: Universitätsstraße 67, Klagenfurt
+Address: Universitätsstraße 67
 City: Klagenfurt
 Map_url: https://campusplan.aau.at/?campus=1&q=Z.1.29#map
 Lat: 46.61633

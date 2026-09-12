@@ -45,7 +45,7 @@ End_date: 2026-11-03T20:30:00+01:00
 Category: events
 Slug: your-meetup-title
 Venue: Venue name
-Address: Street, city
+Address: Street and number
 City: Klagenfurt
 Format: Talks + lightning talks
 Description: Short summary for listings.
