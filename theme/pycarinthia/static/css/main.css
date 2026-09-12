@@ -193,6 +193,20 @@ a {
   white-space: nowrap;
 }
 
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  flex: none;
+  object-fit: contain;
+}
+
+.brand-mark--footer {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
 .brand-code {
   display: inline-flex;
   align-items: center;
@@ -232,6 +246,11 @@ a {
   }
   .brand-mobile {
     display: inline-flex;
+  }
+  .brand-mark {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
   }
 }
 
