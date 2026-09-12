@@ -43,7 +43,7 @@ Google is responsible for its own service-side data processing. More information
 
 ## Event registration
 
-PyCarinthia may use linked Google Forms or [Lu.ma](https://lu.ma/) for free meetup RSVPs, guest lists, reminders, and event updates. If you register for an event through one of those services, the respective provider is responsible for its own service-side data processing.
+PyCarinthia uses [Meetup](https://www.meetup.com/pycarinthia/) for event RSVPs, guest lists, reminders, and event updates, and may use linked Google Forms or [Lu.ma](https://lu.ma/) for the same purpose. Meetup is operated by Meetup LLC in the United States. If you register for an event through one of those services, the respective provider is responsible for its own service-side data processing.
 
 ## External services and links
 
