@@ -102,9 +102,10 @@ PROPOSAL_FORM_URL = (
     os.environ.get("PYCARINTHIA_PROPOSAL_FORM_URL")
     or "https://docs.google.com/forms/d/e/1FAIpQLSc-QutaLbcQtLzWISr9uv57bqpRBMiz9AM50ScVYflTZWluhA/viewform"
 ).strip()
+MEETUP_GROUP_URL = "https://www.meetup.com/pycarinthia/"
 RSVP_PLATFORM_URL = (
     os.environ.get("PYCARINTHIA_RSVP_PLATFORM_URL")
-    or "https://docs.google.com/forms/d/e/1FAIpQLScMr_JMksm4Awxjmjms07zOjZducAnPaH0AwYO68BebWPGVcQ/viewform"
+    or "https://www.meetup.com/pycarinthia/events/316488225/"
 ).strip()
 NEWSLETTER_URL = (
     os.environ.get("PYCARINTHIA_NEWSLETTER_URL")
@@ -134,6 +135,13 @@ FORMATS = [
 ]
 
 CONNECT_LINKS = [
+    {
+        "label": "Meetup",
+        "title": "Meetup group",
+        "href": MEETUP_GROUP_URL,
+        "external": True,
+        "text": "RSVP for the next meetup and get event reminders.",
+    },
     {
         "label": "Talks",
         "title": "Proposal form",
