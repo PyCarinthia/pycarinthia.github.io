@@ -125,16 +125,19 @@ For GitHub Pages, set these as repository variables:
 - `PYCARINTHIA_PROPOSAL_FORM_URL`
 - `PYCARINTHIA_RSVP_PLATFORM_URL`
 
-For event RSVPs, add the registration URL to the event Markdown. A Google Form
-is enough for the first meetup:
+For event RSVPs, set `External_url` on the event Markdown to that event's
+registration page — currently a Meetup event for PyCarinthia. `External_label`
+sets the RSVP button text:
 
 ```md
-External_url: https://docs.google.com/forms/d/e/example/viewform
+External_url: https://www.meetup.com/pycarinthia/events/316488225/
+External_label: RSVP on Meetup
 ```
 
-Later, a Lu.ma event can be used instead. Lu.ma can keep the event registration
-page live while the venue is still to be announced. Once the venue is confirmed,
-update the Lu.ma event location and the event Markdown in this repository.
+`RSVP_PLATFORM_URL` (built from `PYCARINTHIA_RSVP_PLATFORM_URL`) is still
+defined in `pelicanconf.py` and still listed above as a repository variable,
+but no template currently reads it. It is unused legacy configuration, not
+the thing that drives RSVP links.
 
 Expected event payload:
 
