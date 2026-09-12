@@ -1,3 +1,4 @@
+{% set THEME_STORAGE_KEY = "pycarinthia-theme" %}
 <!doctype html>
 <html lang="{{ DEFAULT_LANG }}">
   <head>
@@ -9,7 +10,7 @@
     <script>
       (function () {
         try {
-          var stored = window.localStorage.getItem("pycarinthia-theme");
+          var stored = window.localStorage.getItem("{{ THEME_STORAGE_KEY }}");
           if (stored === "light" || stored === "dark") {
             document.documentElement.dataset.theme = stored;
           }
@@ -127,7 +128,7 @@
         var root = document.documentElement;
         var systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
         var toggles = Array.prototype.slice.call(document.querySelectorAll("[data-theme-toggle]"));
-        var STORAGE_KEY = "pycarinthia-theme";
+        var STORAGE_KEY = "{{ THEME_STORAGE_KEY }}";
         var manualTheme = null;
 
         try {
