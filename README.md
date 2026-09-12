@@ -50,10 +50,14 @@ City: Klagenfurt
 Format: Talks + lightning talks
 Description: Short summary for listings.
 External_url: https://example.com/rsvp
+External_label: RSVP on Meetup
 Map_url: https://www.google.com/maps/dir/?api=1&destination=Venue%20name%2C%20Klagenfurt
 
 Longer event details go here.
 ```
+
+`External_label` is optional and sets the text on the RSVP button; it defaults
+to `RSVP` when omitted.
 
 ## Add resources with Markdown
 
@@ -69,6 +73,30 @@ External_url: https://www.python.org/
 Description: Official Python downloads, documentation, and news.
 Order: 10
 ```
+
+## Regenerate icons and logo assets
+
+`content/assets/logo-source.png` is the pristine, opaque source logo and the
+only file to replace when the logo changes. Every other logo and icon asset
+in `content/assets/` is derived from it and regenerated with:
+
+```sh
+uv run --with pillow python tools/make_icons.py
+```
+
+This script is a one-off tool, not part of the site build, so Pillow is
+deliberately not a project dependency — it is installed ad hoc for this one
+run instead. The command writes:
+
+- `logo.png` — transparent logo
+- `logo-mark.png` — square brand mark
+- `favicon.ico`
+- `icon-192.png` and `icon-512.png`
+- `apple-touch-icon.png`
+- `og-image.png` — social preview image
+
+Commit the generated files alongside the source; they are read back as-is by
+the site and must never be edited by hand.
 
 ## Add remote APIs
 
