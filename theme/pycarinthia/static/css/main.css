@@ -8,8 +8,8 @@
   --lake: #2f6b9b;
   --lake-dark: #16395f;
   --accent-text: #1d4d80;
-  --ice: #549cc0;
-  --ice-light: #8cc6e8;
+  --ice: #4a8cb0;
+  --ice-light: #c9e4f4;
   --header-bg: rgba(250, 252, 253, 0.88);
   --header-border: rgba(213, 226, 236, 0.86);
   --button-primary-bg: #2f6b9b;
@@ -38,7 +38,7 @@
     --lake-dark: #122c47;
     --accent-text: #8cc6e8;
     --ice: #5aa5cf;
-    --ice-light: #8cc6e8;
+    --ice-light: #c9e4f4;
     --header-bg: rgba(27, 30, 32, 0.9);
     --header-border: rgba(59, 64, 67, 0.9);
     --button-primary-bg: #4a94c4;
@@ -65,8 +65,8 @@ html[data-theme="light"] {
   --lake: #2f6b9b;
   --lake-dark: #16395f;
   --accent-text: #1d4d80;
-  --ice: #549cc0;
-  --ice-light: #8cc6e8;
+  --ice: #4a8cb0;
+  --ice-light: #c9e4f4;
   --header-bg: rgba(250, 252, 253, 0.88);
   --header-border: rgba(213, 226, 236, 0.86);
   --button-primary-bg: #2f6b9b;
@@ -93,7 +93,7 @@ html[data-theme="dark"] {
   --lake-dark: #122c47;
   --accent-text: #8cc6e8;
   --ice: #5aa5cf;
-  --ice-light: #8cc6e8;
+  --ice-light: #c9e4f4;
   --header-bg: rgba(27, 30, 32, 0.9);
   --header-border: rgba(59, 64, 67, 0.9);
   --button-primary-bg: #4a94c4;
