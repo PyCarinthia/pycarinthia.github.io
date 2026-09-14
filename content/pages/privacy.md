@@ -43,11 +43,11 @@ Google is responsible for its own service-side data processing. More information
 
 ## Event registration
 
-PyCarinthia may use linked Google Forms or [Lu.ma](https://lu.ma/) for free meetup RSVPs, guest lists, reminders, and event updates. If you register for an event through one of those services, the respective provider is responsible for its own service-side data processing.
+PyCarinthia uses [Meetup](https://www.meetup.com/pycarinthia/) for event RSVPs, guest lists, reminders, and event updates. Meetup is operated by Meetup LLC in the United States; more information is available in the [Meetup Privacy Policy](https://help.meetup.com/hc/en-us/articles/360044422391-Privacy-Policy). PyCarinthia may also use linked Google Forms or [Lu.ma](https://lu.ma/) for the same purpose. If you register for an event through one of those services, the respective provider is responsible for its own service-side data processing.
 
 ## External services and links
 
-This website links to external services such as Google Forms, Lu.ma, GitHub, Python community pages, and regional event websites. If you follow those links, the respective provider is responsible for its own data processing.
+This website links to external services such as Google Forms, Lu.ma, Meetup, GitHub, Python community pages, and regional event websites. If you follow those links, the respective provider is responsible for its own data processing.
 
 ## Remote content feeds
 

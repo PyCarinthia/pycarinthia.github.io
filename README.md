@@ -45,15 +45,19 @@ End_date: 2026-11-03T20:30:00+01:00
 Category: events
 Slug: your-meetup-title
 Venue: Venue name
-Address: Street, city
+Address: Street and number
 City: Klagenfurt
 Format: Talks + lightning talks
 Description: Short summary for listings.
 External_url: https://example.com/rsvp
+External_label: RSVP on Meetup
 Map_url: https://www.google.com/maps/dir/?api=1&destination=Venue%20name%2C%20Klagenfurt
 
 Longer event details go here.
 ```
+
+`External_label` is optional and sets the text on the RSVP button; it defaults
+to `RSVP` when omitted.
 
 ## Add resources with Markdown
 
@@ -69,6 +73,30 @@ External_url: https://www.python.org/
 Description: Official Python downloads, documentation, and news.
 Order: 10
 ```
+
+## Regenerate icons and logo assets
+
+`content/assets/logo-source.png` is the pristine, opaque source logo and the
+only file to replace when the logo changes. Every other logo and icon asset
+in `content/assets/` is derived from it and regenerated with:
+
+```sh
+uv run --with pillow python tools/make_icons.py
+```
+
+This script is a one-off tool, not part of the site build, so Pillow is
+deliberately not a project dependency — it is installed ad hoc for this one
+run instead. The command writes:
+
+- `logo.png` — transparent logo
+- `logo-mark.png` — square brand mark
+- `favicon.ico`
+- `icon-192.png` and `icon-512.png`
+- `apple-touch-icon.png`
+- `og-image.png` — social preview image
+
+Commit the generated files alongside the source; they are read back as-is by
+the site and must never be edited by hand.
 
 ## Add remote APIs
 
@@ -97,16 +125,19 @@ For GitHub Pages, set these as repository variables:
 - `PYCARINTHIA_PROPOSAL_FORM_URL`
 - `PYCARINTHIA_RSVP_PLATFORM_URL`
 
-For event RSVPs, add the registration URL to the event Markdown. A Google Form
-is enough for the first meetup:
+For event RSVPs, set `External_url` on the event Markdown to that event's
+registration page — currently a Meetup event for PyCarinthia. `External_label`
+sets the RSVP button text:
 
 ```md
-External_url: https://docs.google.com/forms/d/e/example/viewform
+External_url: https://www.meetup.com/pycarinthia/events/316488225/
+External_label: RSVP on Meetup
 ```
 
-Later, a Lu.ma event can be used instead. Lu.ma can keep the event registration
-page live while the venue is still to be announced. Once the venue is confirmed,
-update the Lu.ma event location and the event Markdown in this repository.
+`RSVP_PLATFORM_URL` (built from `PYCARINTHIA_RSVP_PLATFORM_URL`) is still
+defined in `pelicanconf.py` and still listed above as a repository variable,
+but no template currently reads it. It is unused legacy configuration, not
+the thing that drives RSVP links.
 
 Expected event payload:
 

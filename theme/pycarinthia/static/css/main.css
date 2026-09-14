@@ -24,20 +24,20 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ink: #eaf5f2;
-    --muted: #a9bfbc;
-    --paper: #071719;
-    --surface: #0d2326;
-    --mist: #112d31;
-    --line: #28474c;
+    --ink: #eef1f2;
+    --muted: #a8aeb0;
+    --paper: #1b1e20;
+    --surface: #24282a;
+    --mist: #2d3134;
+    --line: #3b4043;
     --lake: #4fd1c8;
     --lake-dark: #06383d;
     --accent-text: #7de0d8;
     --sun: #f4c85f;
     --coral: #ff8a73;
     --python-blue: #8ab6e8;
-    --header-bg: rgba(7, 23, 25, 0.9);
-    --header-border: rgba(40, 71, 76, 0.9);
+    --header-bg: rgba(27, 30, 32, 0.9);
+    --header-border: rgba(59, 64, 67, 0.9);
     --button-dark-bg: #0f555c;
     --button-dark-text: #ffffff;
     --button-primary-text: #122527;
@@ -71,20 +71,20 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
-  --ink: #eaf5f2;
-  --muted: #a9bfbc;
-  --paper: #071719;
-  --surface: #0d2326;
-  --mist: #112d31;
-  --line: #28474c;
+  --ink: #eef1f2;
+  --muted: #a8aeb0;
+  --paper: #1b1e20;
+  --surface: #24282a;
+  --mist: #2d3134;
+  --line: #3b4043;
   --lake: #4fd1c8;
   --lake-dark: #06383d;
   --accent-text: #7de0d8;
   --sun: #f4c85f;
   --coral: #ff8a73;
   --python-blue: #8ab6e8;
-  --header-bg: rgba(7, 23, 25, 0.9);
-  --header-border: rgba(40, 71, 76, 0.9);
+  --header-bg: rgba(27, 30, 32, 0.9);
+  --header-border: rgba(59, 64, 67, 0.9);
   --button-dark-bg: #0f555c;
   --button-dark-text: #ffffff;
   --button-primary-text: #122527;
@@ -193,6 +193,13 @@ a {
   white-space: nowrap;
 }
 
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  flex: none;
+}
+
 .brand-code {
   display: inline-flex;
   align-items: center;
@@ -232,6 +239,11 @@ a {
   }
   .brand-mobile {
     display: inline-flex;
+  }
+  .brand-mark {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
   }
 }
 
@@ -542,6 +554,18 @@ a {
 .event-title {
   max-width: 760px;
   font-size: clamp(1.65rem, 3vw, 2.45rem);
+}
+
+.event-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.event-title-link:hover,
+.event-title-link:focus-visible {
+  color: var(--lake);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .event-meta {
