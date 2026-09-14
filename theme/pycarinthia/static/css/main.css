@@ -21,7 +21,7 @@
   --hero-grad-start: #f2f6f9;
   --hero-grad-end: #d8e8f2;
   --hero-ink: #122527;
-  --hero-muted: #5f7173;
+  --hero-muted: #4c5b5d;
   --radius: 6px;
   color-scheme: light;
 }
@@ -78,7 +78,7 @@ html[data-theme="light"] {
   --hero-grad-start: #f2f6f9;
   --hero-grad-end: #d8e8f2;
   --hero-ink: #122527;
-  --hero-muted: #5f7173;
+  --hero-muted: #4c5b5d;
   color-scheme: light;
 }
 
@@ -394,6 +394,7 @@ a {
   right: 0;
   bottom: 0;
   height: 10px;
+  /* Brand stripe: fixed logo blues, deliberately identical in both themes. */
   background: linear-gradient(90deg, #16395f, #2f6b9b, #549cc0, #a9cbdd);
 }
 
@@ -426,10 +427,6 @@ a {
   font-weight: 850;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-}
-
-.hero .eyebrow {
-  color: var(--lake);
 }
 
 .hero h1,
@@ -987,7 +984,6 @@ a.event-card:hover {
   }
 
   .hero-logo {
-    order: 2;
     max-width: 240px;
     justify-self: center;
   }
