@@ -887,6 +887,13 @@ a.event-card:hover {
     var(--lake-dark);
 }
 
+.footer-logo {
+  display: block;
+  margin: 0 auto 34px;
+  width: 120px;
+  height: auto;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1.3fr 0.7fr 0.8fr;
