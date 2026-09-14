@@ -1,23 +1,27 @@
 :root {
   --ink: #122527;
   --muted: #5f7173;
-  --paper: #fbfaf7;
+  --paper: #fafcfd;
   --surface: #ffffff;
-  --mist: #edf4f2;
-  --line: #d7e3df;
-  --lake: #087f7a;
-  --lake-dark: #06474d;
-  --accent-text: #06474d;
-  --sun: #f2b134;
-  --coral: #df674f;
-  --python-blue: #366994;
-  --header-bg: rgba(251, 250, 247, 0.88);
-  --header-border: rgba(215, 227, 223, 0.86);
-  --button-dark-bg: #06474d;
+  --mist: #eef4f9;
+  --line: #d5e2ec;
+  --lake: #2f6b9b;
+  --lake-dark: #16395f;
+  --accent-text: #1d4d80;
+  --ice: #4a8cb0;
+  --ice-light: #c9e4f4;
+  --header-bg: rgba(250, 252, 253, 0.88);
+  --header-border: rgba(213, 226, 236, 0.86);
+  --button-primary-bg: #2f6b9b;
+  --button-primary-text: #ffffff;
+  --button-dark-bg: #16395f;
   --button-dark-text: #ffffff;
-  --button-primary-text: #122527;
-  --shadow: 0 24px 60px rgba(6, 71, 77, 0.14);
-  --hover-shadow: 0 14px 34px rgba(6, 71, 77, 0.1);
+  --shadow: 0 24px 60px rgba(22, 57, 95, 0.14);
+  --hover-shadow: 0 14px 34px rgba(22, 57, 95, 0.1);
+  --hero-grad-start: #f2f6f9;
+  --hero-grad-end: #d8e8f2;
+  --hero-ink: #122527;
+  --hero-muted: #4c5b5d;
   --radius: 6px;
   color-scheme: light;
 }
@@ -30,19 +34,23 @@
     --surface: #24282a;
     --mist: #2d3134;
     --line: #3b4043;
-    --lake: #4fd1c8;
-    --lake-dark: #06383d;
-    --accent-text: #7de0d8;
-    --sun: #f4c85f;
-    --coral: #ff8a73;
-    --python-blue: #8ab6e8;
+    --lake: #6fb7dd;
+    --lake-dark: #122c47;
+    --accent-text: #8cc6e8;
+    --ice: #5aa5cf;
+    --ice-light: #c9e4f4;
     --header-bg: rgba(27, 30, 32, 0.9);
     --header-border: rgba(59, 64, 67, 0.9);
-    --button-dark-bg: #0f555c;
+    --button-primary-bg: #4a94c4;
+    --button-primary-text: #0e1a26;
+    --button-dark-bg: #1d4d80;
     --button-dark-text: #ffffff;
-    --button-primary-text: #122527;
     --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
     --hover-shadow: 0 14px 34px rgba(0, 0, 0, 0.26);
+    --hero-grad-start: #1e2933;
+    --hero-grad-end: #16395f;
+    --hero-ink: #eef1f2;
+    --hero-muted: #c7ccd0;
     color-scheme: dark;
   }
 }
@@ -50,23 +58,27 @@
 html[data-theme="light"] {
   --ink: #122527;
   --muted: #5f7173;
-  --paper: #fbfaf7;
+  --paper: #fafcfd;
   --surface: #ffffff;
-  --mist: #edf4f2;
-  --line: #d7e3df;
-  --lake: #087f7a;
-  --lake-dark: #06474d;
-  --accent-text: #06474d;
-  --sun: #f2b134;
-  --coral: #df674f;
-  --python-blue: #366994;
-  --header-bg: rgba(251, 250, 247, 0.88);
-  --header-border: rgba(215, 227, 223, 0.86);
-  --button-dark-bg: #06474d;
+  --mist: #eef4f9;
+  --line: #d5e2ec;
+  --lake: #2f6b9b;
+  --lake-dark: #16395f;
+  --accent-text: #1d4d80;
+  --ice: #4a8cb0;
+  --ice-light: #c9e4f4;
+  --header-bg: rgba(250, 252, 253, 0.88);
+  --header-border: rgba(213, 226, 236, 0.86);
+  --button-primary-bg: #2f6b9b;
+  --button-primary-text: #ffffff;
+  --button-dark-bg: #16395f;
   --button-dark-text: #ffffff;
-  --button-primary-text: #122527;
-  --shadow: 0 24px 60px rgba(6, 71, 77, 0.14);
-  --hover-shadow: 0 14px 34px rgba(6, 71, 77, 0.1);
+  --shadow: 0 24px 60px rgba(22, 57, 95, 0.14);
+  --hover-shadow: 0 14px 34px rgba(22, 57, 95, 0.1);
+  --hero-grad-start: #f2f6f9;
+  --hero-grad-end: #d8e8f2;
+  --hero-ink: #122527;
+  --hero-muted: #4c5b5d;
   color-scheme: light;
 }
 
@@ -77,19 +89,23 @@ html[data-theme="dark"] {
   --surface: #24282a;
   --mist: #2d3134;
   --line: #3b4043;
-  --lake: #4fd1c8;
-  --lake-dark: #06383d;
-  --accent-text: #7de0d8;
-  --sun: #f4c85f;
-  --coral: #ff8a73;
-  --python-blue: #8ab6e8;
+  --lake: #6fb7dd;
+  --lake-dark: #122c47;
+  --accent-text: #8cc6e8;
+  --ice: #5aa5cf;
+  --ice-light: #c9e4f4;
   --header-bg: rgba(27, 30, 32, 0.9);
   --header-border: rgba(59, 64, 67, 0.9);
-  --button-dark-bg: #0f555c;
+  --button-primary-bg: #4a94c4;
+  --button-primary-text: #0e1a26;
+  --button-dark-bg: #1d4d80;
   --button-dark-text: #ffffff;
-  --button-primary-text: #122527;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
   --hover-shadow: 0 14px 34px rgba(0, 0, 0, 0.26);
+  --hero-grad-start: #1e2933;
+  --hero-grad-end: #16395f;
+  --hero-ink: #eef1f2;
+  --hero-muted: #c7ccd0;
   color-scheme: dark;
 }
 
@@ -125,7 +141,7 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid var(--sun);
+  outline: 3px solid var(--ice);
   outline-offset: 3px;
 }
 
@@ -135,8 +151,8 @@ a {
   left: 12px;
   z-index: 100;
   transform: translateY(-160%);
-  background: var(--sun);
-  color: var(--ink);
+  background: var(--button-dark-bg);
+  color: var(--button-dark-text);
   padding: 10px 14px;
   border-radius: var(--radius);
   font-weight: 800;
@@ -291,7 +307,7 @@ a {
   height: 24px;
   border-radius: 999px;
   background:
-    linear-gradient(90deg, var(--sun), var(--python-blue));
+    linear-gradient(90deg, var(--ice-light), var(--lake-dark));
 }
 
 .theme-toggle-thumb {
@@ -367,18 +383,8 @@ a {
   display: grid;
   align-items: center;
   overflow: hidden;
-  color: #fff;
-  background: var(--lake-dark);
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(6, 40, 44, 0.92), rgba(6, 40, 44, 0.62) 48%, rgba(6, 40, 44, 0.2)),
-    linear-gradient(0deg, rgba(6, 40, 44, 0.3), rgba(6, 40, 44, 0.05)),
-    url("/assets/hero-carinthia.jpg") center / cover no-repeat;
+  color: var(--hero-ink);
+  background: linear-gradient(135deg, var(--hero-grad-start), var(--hero-grad-end));
 }
 
 .hero::after {
@@ -388,16 +394,31 @@ a {
   right: 0;
   bottom: 0;
   height: 10px;
-  background: linear-gradient(90deg, var(--lake), var(--sun), var(--coral), var(--python-blue));
+  /* Brand stripe: fixed logo blues, deliberately identical in both themes. */
+  background: linear-gradient(90deg, #16395f, #2f6b9b, #549cc0, #a9cbdd);
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 40px;
   padding: 72px 0 86px;
 }
 
-.eyebrow,
+.hero-logo {
+  width: clamp(200px, 34vw, 380px);
+  height: auto;
+}
+
+.hero .button.secondary {
+  border-color: var(--lake);
+  color: var(--accent-text);
+  background: transparent;
+}
+
 .section-kicker,
 .card-kicker {
   color: var(--lake);
@@ -405,10 +426,6 @@ a {
   font-weight: 850;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-}
-
-.hero .eyebrow {
-  color: var(--sun);
 }
 
 .hero h1,
@@ -423,13 +440,13 @@ a {
 }
 
 .hero h1 span {
-  color: var(--sun);
+  color: var(--lake);
 }
 
 .hero-copy {
   max-width: 670px;
   margin: 26px 0 0;
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--hero-muted);
   font-size: clamp(1.05rem, 1.8vw, 1.28rem);
 }
 
@@ -450,7 +467,7 @@ a {
   border-radius: var(--radius);
   padding: 11px 18px;
   color: var(--button-primary-text);
-  background: var(--sun);
+  background: var(--button-primary-bg);
   font-size: 0.94rem;
   font-weight: 850;
   text-decoration: none;
@@ -524,13 +541,13 @@ a {
   padding: 32px;
   color: #fff;
   background:
-    linear-gradient(135deg, rgba(8, 127, 122, 0.4), rgba(54, 105, 148, 0.28)),
+    linear-gradient(135deg, rgba(84, 156, 192, 0.35), rgba(47, 107, 155, 0.2)),
     var(--lake-dark);
   border-radius: var(--radius) 0 0 var(--radius);
 }
 
 .date-tile .month {
-  color: var(--sun);
+  color: var(--ice-light);
   font-weight: 850;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -724,7 +741,7 @@ a.pill--link:focus-visible {
 }
 
 .card-index {
-  color: var(--coral);
+  color: var(--lake);
   font-size: 0.78rem;
   font-weight: 900;
 }
@@ -865,8 +882,15 @@ a.event-card:hover {
   padding: 58px 0 28px;
   color: rgba(255, 255, 255, 0.76);
   background:
-    linear-gradient(120deg, rgba(8, 127, 122, 0.24), rgba(223, 103, 79, 0.13)),
+    linear-gradient(120deg, rgba(84, 156, 192, 0.18), rgba(47, 107, 155, 0.12)),
     var(--lake-dark);
+}
+
+.footer-logo {
+  display: block;
+  margin: 0 auto 34px;
+  width: 120px;
+  height: auto;
 }
 
 .footer-grid {
@@ -904,7 +928,7 @@ a.event-card:hover {
 }
 
 .site-footer a:hover {
-  color: var(--sun);
+  color: var(--ice-light);
 }
 
 .footer-bottom {
@@ -960,7 +984,14 @@ a.event-card:hover {
   }
 
   .hero-content {
+    grid-template-columns: 1fr;
+    justify-items: start;
     padding: 54px 0 64px;
+  }
+
+  .hero-logo {
+    max-width: 240px;
+    justify-self: center;
   }
 
   .actions,
