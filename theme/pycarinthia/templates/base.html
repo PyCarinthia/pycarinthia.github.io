@@ -21,7 +21,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="{% block og_title %}{{ SITENAME }}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ SITEDESCRIPTION }}{% endblock %}">
-    <meta property="og:image" content="{{ SITEURL }}/assets/og-image.png">
+    <meta property="og:image" content="{{ SITEURL }}/{% block og_image %}assets/og-image.png{% endblock %}">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="{{ SITEURL }}/assets/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="192x192" href="{{ SITEURL }}/assets/icon-192.png">

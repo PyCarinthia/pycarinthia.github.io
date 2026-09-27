@@ -857,6 +857,37 @@ a.event-card:hover {
   max-width: 760px;
 }
 
+.event-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 760px) minmax(0, 300px);
+  justify-content: space-between;
+  align-items: start;
+  gap: 48px;
+}
+
+.event-poster {
+  position: sticky;
+  top: 96px;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+.event-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.event-poster-link {
+  color: var(--lake);
+  font-size: 0.9rem;
+  font-weight: 760;
+}
+
 .prose {
   color: var(--muted);
   font-size: 1.06rem;
@@ -942,6 +973,16 @@ a.event-card:hover {
 }
 
 @media (max-width: 940px) {
+  .event-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .event-poster {
+    position: static;
+    max-width: 300px;
+    justify-self: center;
+  }
+
   .format-grid,
   .resource-grid,
   .connect-grid {

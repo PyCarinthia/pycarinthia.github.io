@@ -2,11 +2,12 @@
 
 {% block title %}{{ article.title }} | {{ SITENAME }}{% endblock %}
 {% block description %}{{ article.description|default(SITEDESCRIPTION) }}{% endblock %}
+{% block og_image %}{{ article.image|default("assets/og-image.png") }}{% endblock %}
 
 {% block content %}
   {% if article.category|string == "events" %}
     <section class="event-page">
-      <div class="shell">
+      <div class="shell{% if article.poster %} event-layout{% endif %}">
         <article>
           <p class="section-kicker">{{ article.format }}</p>
           <h1 class="event-title">{{ article.title }}</h1>
@@ -47,6 +48,14 @@
             </div>
           {% endif %}
         </article>
+        {% if article.poster %}
+          <aside class="event-poster">
+            <a href="{{ SITEURL }}/{{ article.poster }}" target="_blank" rel="noopener">
+              <img src="{{ SITEURL }}/{{ article.poster }}" alt="Poster for {{ article.title }}" loading="lazy">
+            </a>
+            <a class="event-poster-link" href="{{ SITEURL }}/{{ article.poster }}" target="_blank" rel="noopener">Open poster</a>
+          </aside>
+        {% endif %}
       </div>
     </section>
   {% else %}

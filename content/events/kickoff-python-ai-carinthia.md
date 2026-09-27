@@ -14,10 +14,24 @@ Format: Intro + 2–3 talks
 Description: The first PyCarinthia meetup: a short intro, two to three talks, open discussion, and drinks afterwards. Supported by the FTF (Förderverein Technische Fakultät).
 External_url: https://www.meetup.com/pycarinthia/events/316488225/
 External_label: RSVP on Meetup
+Image: assets/events/kickoff/social.jpg
+Poster: assets/events/kickoff/poster.jpg
 
 The first PyCarinthia meetup. The goal is simple: meet the people in Carinthia who build with Python and AI, and shape the community together.
 
-The evening opens with a short intro to what PyCarinthia is and what it can become, followed by two to three talks on Python, AI, and everything around them. Afterwards there is open discussion and drinks. Details on the exact schedule and speakers will follow.
+The evening opens with a short intro to what PyCarinthia is and what it can become, followed by two to three talks on Python, AI, and everything around them. Afterwards there is open discussion and drinks. Details on the exact schedule will follow.
+
+## Speakers
+
+### Christian Klimbacher: When AI Calls a Multimeter for Help, You Get More Than Expected
+
+Given nothing but a photo of an unknown circuit board, can we work out what is on it? This talk walks through a Python system that loops over imperfect sources: a vision LLM reads the board, datasheets supply expectations, and a simple multimeter measures in-circuit, where parallel paths make any single reading unclear. Each source only knows part of the answer, but together they find values that were unknown before. Live measurement on stage included.
+
+### Benjamin Hackl: Talk title TBD
+
+Talk details will follow.
+
+## Good to know
 
 Just here to listen? Perfect. Come along, ask questions, or simply see who else is around.
 
