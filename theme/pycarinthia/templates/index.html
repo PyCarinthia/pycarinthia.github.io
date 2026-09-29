@@ -32,11 +32,18 @@
       </div>
 
       {% if next_event %}
-        <article class="event-panel">
-          <div class="date-tile" aria-label="{{ next_event|event_date_long }}">
+        <article class="event-panel{% if next_event.image %} event-panel--image{% endif %}">
+          <div class="date-tile date-tile--actions" aria-label="{{ next_event|event_date_long }}">
             <span class="month">{{ next_event|event_month }}</span>
             <span class="day">{{ next_event|event_day }}</span>
             <span class="time">{{ next_event|event_time }} Vienna time</span>
+            <details class="cal-dropdown">
+              <summary class="button light">Add to calendar</summary>
+              <div class="cal-options">
+                <a href="{{ next_event|gcal_url }}" target="_blank" rel="noopener noreferrer">Google Calendar</a>
+                <a href="{{ SITEURL }}/calendar.ics">Download .ics</a>
+              </div>
+            </details>
           </div>
           <div class="event-body">
             <p class="card-kicker">{{ next_event.format }}</p>
@@ -51,13 +58,6 @@
             </div>
             <p>{{ next_event.description }}</p>
             <div class="event-actions">
-              <details class="cal-dropdown">
-                <summary class="button dark">Add to calendar</summary>
-                <div class="cal-options">
-                  <a href="{{ next_event|gcal_url }}" target="_blank" rel="noopener noreferrer">Google Calendar</a>
-                  <a href="{{ SITEURL }}/calendar.ics">Download .ics</a>
-                </div>
-              </details>
               <a class="button light" href="{{ SITEURL }}/{{ next_event.url }}">Read details</a>
               {% if next_event.external_url %}
                 <a class="button light" href="{{ next_event.external_url }}" target="_blank" rel="noopener noreferrer">{{ next_event.external_label|default("RSVP") }}</a>
@@ -67,6 +67,11 @@
               {% endif %}
             </div>
           </div>
+          {% if next_event.image %}
+            <a class="event-panel-image" href="{{ SITEURL }}/{{ next_event.url }}">
+              <img src="{{ SITEURL }}/{{ next_event.image }}" alt="{{ next_event.title }}: read details" loading="lazy">
+            </a>
+          {% endif %}
         </article>
         {% if next_event.lat and next_event.lon %}
           <div class="map-frame" aria-label="Map of {{ next_event.city }}">

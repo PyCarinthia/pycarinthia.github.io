@@ -27,6 +27,9 @@
         <div class="event-list">
           {% for event in upcoming %}
             <a class="event-card" href="{{ SITEURL }}/{{ event.url }}">
+              {% if event.image %}
+                <img class="event-card-image" src="{{ SITEURL }}/{{ event.image }}" alt="" loading="lazy">
+              {% endif %}
               <time datetime="{{ event.event_date }}">{{ event|event_date_long }} - {{ event|event_time }}</time>
               <h2>{{ event.title }}</h2>
               <p>{{ event.venue }}</p>
@@ -50,6 +53,9 @@
         <div class="event-list">
           {% for event in past %}
             <a class="event-card" href="{{ SITEURL }}/{{ event.url }}">
+              {% if event.image %}
+                <img class="event-card-image" src="{{ SITEURL }}/{{ event.image }}" alt="" loading="lazy">
+              {% endif %}
               <time datetime="{{ event.event_date }}">{{ event|event_date_short }}</time>
               <h3>{{ event.title }}</h3>
               <p>{{ event.venue }}</p>
