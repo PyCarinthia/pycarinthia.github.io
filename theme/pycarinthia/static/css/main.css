@@ -895,6 +895,7 @@ a.event-card:hover {
 
 .prose h2,
 .prose h3 {
+  clear: both;
   margin: 2rem 0 0.7rem;
   color: var(--ink);
   line-height: 1.2;
@@ -902,6 +903,68 @@ a.event-card:hover {
 
 .prose p {
   margin: 0 0 1.1rem;
+}
+
+.speaker {
+  display: flow-root;
+}
+
+.prose a.lightbox {
+  float: right;
+  width: min(220px, 40%);
+  margin: 0.3rem 0 1rem 1.5rem;
+}
+
+.speaker-card {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--hover-shadow);
+}
+
+a.lightbox {
+  cursor: zoom-in;
+}
+
+.lightbox-dialog {
+  max-width: min(94vw, 1100px);
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+  cursor: zoom-out;
+}
+
+.lightbox-dialog::backdrop {
+  background: rgba(10, 20, 30, 0.82);
+}
+
+.lightbox-dialog img {
+  display: block;
+  max-width: min(94vw, 1100px);
+  max-height: 94vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow);
 }
 
 .prose a {
@@ -1038,6 +1101,13 @@ a.event-card:hover {
   .actions,
   .event-actions {
     display: grid;
+  }
+
+  .prose a.lightbox {
+    float: none;
+    display: block;
+    width: min(320px, 100%);
+    margin: 0 auto 1.1rem;
   }
 
   .button {

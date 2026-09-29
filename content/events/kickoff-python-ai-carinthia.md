@@ -23,13 +23,29 @@ The evening opens with a short intro to what PyCarinthia is and what it can beco
 
 ## Speakers
 
+<div class="speakers" markdown="1">
+
+<div class="speaker" markdown="1">
+
 ### Christian Klimbacher: When AI Calls a Multimeter for Help, You Get More Than Expected
+
+[![Speaker card for Christian Klimbacher]({static}/assets/events/kickoff/speaker-christian-klimbacher.jpg){: .speaker-card }]({static}/assets/events/kickoff/speaker-christian-klimbacher.jpg){: .lightbox }
 
 Given nothing but a photo of an unknown circuit board, can we work out what is on it? This talk walks through a Python system that loops over imperfect sources: a vision LLM reads the board, datasheets supply expectations, and a simple multimeter measures in-circuit, where parallel paths make any single reading unclear. Each source only knows part of the answer, but together they find values that were unknown before. Live measurement on stage included.
 
-### Benjamin Hackl: Talk title TBD
+</div>
 
-Talk details will follow.
+<div class="speaker" markdown="1">
+
+### Benjamin Hackl: Musings from Maintaining Manim
+
+[![Speaker card for Benjamin Hackl]({static}/assets/events/kickoff/speaker-benjamin-hackl.jpg){: .speaker-card }]({static}/assets/events/kickoff/speaker-benjamin-hackl.jpg){: .lightbox }
+
+Manim is a Python library for creating mathematical animations, originally built by popular math communicator Grant “3Blue1Brown” Sanderson. After a quick interactive demo, I’ll talk about my path into open source and explain why my car mechanic is responsible both for me being rude to people on the internet and for me occasionally getting to press the “new Manim release” button. On a more serious note, I will share some thoughts about community building and dealing with AI slop in the age of the clankers.
+
+</div>
+
+</div>
 
 ## Good to know
 

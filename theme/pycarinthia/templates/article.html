@@ -50,10 +50,10 @@
         </article>
         {% if article.poster %}
           <aside class="event-poster">
-            <a href="{{ SITEURL }}/{{ article.poster }}" target="_blank" rel="noopener">
+            <a class="lightbox" href="{{ SITEURL }}/{{ article.poster }}">
               <img src="{{ SITEURL }}/{{ article.poster }}" alt="Poster for {{ article.title }}" loading="lazy">
             </a>
-            <a class="event-poster-link" href="{{ SITEURL }}/{{ article.poster }}" target="_blank" rel="noopener">Open poster</a>
+            <a class="lightbox event-poster-link" href="{{ SITEURL }}/{{ article.poster }}">Enlarge poster</a>
           </aside>
         {% endif %}
       </div>
@@ -76,5 +76,52 @@
         </article>
       </div>
     </section>
+  {% endif %}
+{% endblock %}
+
+{% block scripts %}
+  {% if article.category|string == "events" %}
+    <dialog class="lightbox-dialog" aria-label="Enlarged image">
+      <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+      <img alt="">
+    </dialog>
+    <script>
+      (function () {
+        var dialog = document.querySelector(".lightbox-dialog");
+        if (!dialog || typeof dialog.showModal !== "function") {
+          return;
+        }
+        var image = dialog.querySelector("img");
+
+        document.querySelectorAll("a.lightbox").forEach(function (link) {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+            var thumb = link.querySelector("img") || document.querySelector('a.lightbox[href="' + link.getAttribute("href") + '"] img');
+            image.src = link.href;
+            image.alt = thumb ? thumb.alt : "";
+            dialog.showModal();
+          });
+        });
+
+        dialog.addEventListener("click", function () {
+          dialog.close();
+        });
+      })();
+
+      (function () {
+        document.querySelectorAll(".speakers").forEach(function (list) {
+          var speakers = Array.prototype.slice.call(list.children);
+          for (var i = speakers.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var swap = speakers[i];
+            speakers[i] = speakers[j];
+            speakers[j] = swap;
+          }
+          speakers.forEach(function (speaker) {
+            list.appendChild(speaker);
+          });
+        });
+      })();
+    </script>
   {% endif %}
 {% endblock %}
