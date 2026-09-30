@@ -19,7 +19,7 @@ Talks and event descriptions are in English by default so international students
 
 ## Code of conduct
 
-PyCarinthia follows the spirit of the [Python Software Foundation Code of Conduct](https://www.python.org/psf/conduct/). Be open, considerate, and respectful. Harassment is not tolerated.
+PyCarinthia has a [Code of Conduct](/code-of-conduct/) based on the [Python Software Foundation Code of Conduct](https://policies.python.org/python.org/code-of-conduct/). Be open, considerate, and respectful. Harassment is not tolerated. It applies to all our events and online spaces, and explains how to report an incident.
 
 ## Contact
 
