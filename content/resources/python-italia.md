@@ -5,6 +5,6 @@ Slug: python-italia
 Resource_category: community
 External_url: https://www.python.it/comunita/
 Description: Italy: national Python community, association, forum, mailing list, Telegram, and PyCon Italia organizer network.
-Order: 300
+Order: 210
 
 Italy: national Python community, association, forum, mailing list, Telegram, and PyCon Italia organizer network.

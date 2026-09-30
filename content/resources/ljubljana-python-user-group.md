@@ -5,6 +5,6 @@ Slug: ljubljana-python-user-group
 Resource_category: community
 External_url: https://www.meetup.com/ljubljana-python-group/
 Description: Slovenia - Ljubljana: Pythonistas around Ljubljana and beyond, connected through the #ljpy community.
-Order: 200
+Order: 100
 
 Slovenia - Ljubljana: Pythonistas around Ljubljana and beyond, connected through the #ljpy community.

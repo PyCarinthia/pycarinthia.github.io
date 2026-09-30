@@ -5,6 +5,6 @@ Slug: python-torino
 Resource_category: community
 External_url: https://www.meetup.com/python-torino/
 Description: Italy - Turin: Python meetup for developers and curious people in and around Torino.
-Order: 360
+Order: 250
 
 Italy - Turin: Python meetup for developers and curious people in and around Torino.

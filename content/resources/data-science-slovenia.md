@@ -5,6 +5,6 @@ Slug: data-science-slovenia
 Resource_category: community
 External_url: https://www.meetup.com/data-science-slovenia/
 Description: Slovenia - Ljubljana: data science meetup with Python for data science, machine learning, and analytics topics.
-Order: 220
+Order: 120
 
 Slovenia - Ljubljana: data science meetup with Python for data science, machine learning, and analytics topics.
