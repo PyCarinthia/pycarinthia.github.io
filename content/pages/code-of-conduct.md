@@ -55,7 +55,7 @@ If a participant violates this Code of Conduct, the organizers may take any acti
 
 ## Reporting
 
-If you are being harassed, notice that someone else is being harassed, or have any other concern, please talk to an organizer at the event straight away. Organizers are introduced at the start of every meetup.
+If you are being harassed, notice that someone else is being harassed, or have any other concern, please talk to an organizer at the event straight away. You can see who the organizers are on the [organizers page](/organizers/).
 
 You can also report an incident, during or after an event, through the [contact form](/contact/). Please include what happened, when and where, who was involved, and whether anyone else witnessed it. If you would like a reply, add an email address or phone number to your message. You do not have to give your real name, but without a way to reach you we cannot follow up.
 

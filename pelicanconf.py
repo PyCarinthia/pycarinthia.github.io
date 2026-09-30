@@ -46,12 +46,13 @@ ARTICLE_SAVE_AS = "{category}/{slug}/index.html"
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}/index.html"
 
-DIRECT_TEMPLATES = ["index", "events", "resources", "contact", "propose"]
+DIRECT_TEMPLATES = ["index", "events", "resources", "contact", "propose", "organizers"]
 INDEX_SAVE_AS = "index.html"
 EVENTS_SAVE_AS = "events/index.html"
 RESOURCES_SAVE_AS = "resources/index.html"
 CONTACT_SAVE_AS = "contact/index.html"
 PROPOSE_SAVE_AS = "propose/index.html"
+ORGANIZERS_SAVE_AS = "organizers/index.html"
 
 DEFAULT_PAGINATION = False
 RELATIVE_URLS = True
@@ -131,6 +132,31 @@ FORMATS = [
     {
         "label": "Social evenings",
         "text": "Unstructured time after the program for questions, hiring chats, AI project ideas, and meeting other Python and AI people nearby.",
+    },
+]
+
+# Shown on /organizers/ in random order. Add new organizers here; `photo` is
+# optional (path under content/assets/), initials are shown without it.
+ORGANIZERS = [
+    {
+        "name": "Harald Nezbeda",
+        "role": "Python Technical Leader at Anexia",
+        "bio": "Builds Python and AI tooling, maintains open-source projects such as VibePod, and speaks at conferences like PyCon DE & PyData and Grazer Linuxtage.",
+        "links": [
+            {"label": "LinkedIn", "href": "https://www.linkedin.com/in/nezhar/"},
+            {"label": "GitHub", "href": "https://github.com/nezhar"},
+            {"label": "Website", "href": "https://nezhar.com"},
+        ],
+    },
+    {
+        "name": "Gabriel Lipnik",
+        "role": "AI & Optimisation Engineer at Anexia",
+        "bio": "Mathematician with a PhD in discrete mathematics from TU Graz. Uses Python, Julia, and SageMath to optimize real-world processes, and lectures at the University of Klagenfurt.",
+        "links": [
+            {"label": "LinkedIn", "href": "https://www.linkedin.com/in/galipnik/"},
+            {"label": "GitHub", "href": "https://github.com/galipnik"},
+            {"label": "Website", "href": "https://www.gabriellipnik.at/"},
+        ],
     },
 ]
 

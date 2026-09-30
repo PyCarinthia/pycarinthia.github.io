@@ -106,6 +106,7 @@
           <h2>Navigate</h2>
           <a href="{{ SITEURL }}/events/">Events</a>
           <a href="{{ SITEURL }}/about/">About</a>
+          <a href="{{ SITEURL }}/organizers/">Organizers</a>
           <a href="{{ SITEURL }}/resources/">Resources</a>
           <a href="{{ SITEURL }}/code-of-conduct/">Code of Conduct</a>
           <a href="{{ SITEURL }}/imprint/">Imprint</a>
@@ -152,6 +153,22 @@
 
         dialog.addEventListener("click", function () {
           dialog.close();
+        });
+      })();
+    </script>
+    <script>
+      (function () {
+        document.querySelectorAll(".speakers, [data-shuffle]").forEach(function (list) {
+          var items = Array.prototype.slice.call(list.children);
+          for (var i = items.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var swap = items[i];
+            items[i] = items[j];
+            items[j] = swap;
+          }
+          items.forEach(function (item) {
+            list.appendChild(item);
+          });
         });
       })();
     </script>

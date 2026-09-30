@@ -21,6 +21,10 @@ Talks and event descriptions are in English by default so international students
 
 PyCarinthia has a [Code of Conduct](/code-of-conduct/) based on the [Python Software Foundation Code of Conduct](https://policies.python.org/python.org/code-of-conduct/). Be open, considerate, and respectful. Harassment is not tolerated. It applies to all our events and online spaces, and explains how to report an incident.
 
+## Organizers
+
+PyCarinthia is run by volunteers. Meet them on the [organizers page](/organizers/).
+
 ## Contact
 
 Use the [contact page](/contact/) for general questions, venues, sponsors, and organizing help.

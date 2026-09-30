@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Organizers | {{ SITENAME }}{% endblock %}
+{% block description %}The volunteers who organize PyCarinthia meetups in Carinthia.{% endblock %}
+
+{% block content %}
+  <header class="page-hero">
+    <div class="shell">
+      <p class="section-kicker">Organizers</p>
+      <h1>Meet the organizers.</h1>
+      <p>PyCarinthia is run by volunteers. Talk to any of us at a meetup, or reach us through the <a href="{{ SITEURL }}/contact/">contact form</a>.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell">
+      <div class="organizer-grid" data-shuffle>
+        {% for organizer in ORGANIZERS %}
+          <article class="card organizer-card">
+            {% if organizer.photo %}
+              <img class="organizer-avatar" src="{{ SITEURL }}/{{ organizer.photo }}" alt="" width="72" height="72" loading="lazy">
+            {% else %}
+              <span class="organizer-avatar" aria-hidden="true">{% for part in organizer.name.split() %}{{ part[0] }}{% endfor %}</span>
+            {% endif %}
+            <h3>{{ organizer.name }}</h3>
+            <p class="organizer-role">{{ organizer.role }}</p>
+            <p>{{ organizer.bio }}</p>
+            <p class="organizer-links">
+              {% for link in organizer.links %}
+                <a href="{{ link.href }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+              {% endfor %}
+            </p>
+          </article>
+        {% endfor %}
+      </div>
+      <p class="organizer-note">Want to help organize? Get in touch through the <a href="{{ SITEURL }}/contact/">contact form</a>.</p>
+    </div>
+  </section>
+{% endblock %}
