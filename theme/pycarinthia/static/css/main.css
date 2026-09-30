@@ -1242,3 +1242,46 @@ a.lightbox {
     display: grid;
   }
 }
+
+.organizer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 16px;
+}
+
+.organizer-avatar {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: var(--mist);
+  color: var(--accent-text);
+  font-size: 1.4rem;
+  font-weight: 800;
+  object-fit: cover;
+}
+
+.card p.organizer-role {
+  margin-top: 4px;
+  color: var(--accent-text);
+  font-weight: 650;
+}
+
+.card p.organizer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 16px;
+}
+
+.organizer-links a {
+  color: var(--lake);
+  font-weight: 700;
+}
+
+.organizer-note {
+  margin: 28px 0 0;
+  color: var(--muted);
+}
