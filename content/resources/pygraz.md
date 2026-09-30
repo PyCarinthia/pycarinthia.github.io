@@ -5,6 +5,6 @@ Slug: pygraz
 Resource_category: community
 External_url: https://pygraz.org/
 Description: Austria - Graz: regular Python user group meetings and a strong model for local Python communities.
-Order: 70
+Order: 130
 
 Austria - Graz: regular Python user group meetings and a strong model for local Python communities.

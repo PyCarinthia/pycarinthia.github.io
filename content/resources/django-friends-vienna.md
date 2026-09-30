@@ -5,6 +5,6 @@ Slug: django-friends-vienna
 Resource_category: community
 External_url: https://www.meetup.com/django-vienna/
 Description: Austria - Vienna: Django and Python web development community meeting every few months.
-Order: 100
+Order: 190
 
 Austria - Vienna: Django and Python web development community meeting every few months.

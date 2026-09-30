@@ -4,7 +4,7 @@ Category: resources
 Slug: pycon-austria
 Resource_category: community
 External_url: https://pycon.at/
-Description: Austria: annual volunteer-organized Python conference bringing together the Austrian and wider Python community.
-Order: 110
+Description: Austria - Eisenstadt: annual volunteer-organized Python conference bringing together the Austrian and wider Python community.
+Order: 160
 
-Austria: annual volunteer-organized Python conference bringing together the Austrian and wider Python community.
+Austria - Eisenstadt: annual volunteer-organized Python conference bringing together the Austrian and wider Python community.

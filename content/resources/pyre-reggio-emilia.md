@@ -5,6 +5,6 @@ Slug: pyre-reggio-emilia
 Resource_category: community
 External_url: https://www.meetup.com/it-IT/pyre-community/
 Description: Italy - Reggio Emilia: local Python user group covering Python, web, data science, AI, and workshops.
-Order: 370
+Order: 220
 
 Italy - Reggio Emilia: local Python user group covering Python, web, data science, AI, and workshops.

@@ -4,7 +4,7 @@ Category: resources
 Slug: pycon-italia
 Resource_category: community
 External_url: https://pycon.it/
-Description: Italy: the main Italian Python conference organized by Python Italia.
-Order: 305
+Description: Italy - Bologna: the main Italian Python conference organized by Python Italia.
+Order: 200
 
-Italy: the main Italian Python conference organized by Python Italia.
+Italy - Bologna: the main Italian Python conference organized by Python Italia.

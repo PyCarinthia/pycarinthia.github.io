@@ -150,6 +150,7 @@ def group_resources(resources: list[object]) -> list[dict[str, object]]:
     labels = {
         "learn": "Learn Python",
         "ai": "Python and AI",
+        "carinthia": "Events in Carinthia",
         "community": "Regional communities",
         "support": "Support PyCarinthia",
         "tools": "Tools",
