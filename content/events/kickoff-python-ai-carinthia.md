@@ -45,6 +45,16 @@ Manim is a Python library for creating mathematical animations, originally built
 
 </div>
 
+<div class="speaker" markdown="1">
+
+### Alina Nessel: LiveSaferOverview: Saving Lives in Tunnels with AI
+
+[![Speaker card for Alina Nessel]({static}/assets/events/kickoff/speaker-alina-nessel.jpg){: .speaker-card }]({static}/assets/events/kickoff/speaker-alina-nessel.jpg){: .lightbox }
+
+When an accident happens in a highway tunnel, rescue teams face a major challenge: keeping a clear overview of the situation. LiveSaferOverview uses Artificial Intelligence to solve this problem. I trained the AI with 80,000 images so it can automatically track emergency vehicles using normal tunnel cameras. It then shows their exact positions on a digital, real-time map on a smartphone. This clear overview prevents rescue teams from driving to the wrong location. By saving these critical minutes, the AI helps to save lives.
+
+</div>
+
 </div>
 
 ## Good to know
