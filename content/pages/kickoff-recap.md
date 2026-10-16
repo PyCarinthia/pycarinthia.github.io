@@ -20,11 +20,10 @@ On 14 October 2026 the Omansaal at the University of Klagenfurt filled up for th
 
 ## Opening
 
-Harald Nezbeda and Gabriel Lipnik opened the evening with what PyCarinthia is meant to be: a free, open meetup for everyone in Carinthia who builds with Python and AI, from students and researchers to professionals and hobbyists. They introduced the Code of Conduct, thanked the FTF (Förderverein Technische Fakultät) and the University of Klagenfurt for their support, and walked through the agenda.
+Harald Nezbeda opened the evening with what PyCarinthia is meant to be: a free, open meetup for everyone in Carinthia who builds with Python and AI, from students and researchers to professionals and hobbyists. He introduced the Code of Conduct, thanked the FTF (Förderverein Technische Fakultät) and the University of Klagenfurt for their support, and walked through the agenda.
 
-<div class="photo-grid photo-grid--2">
+<div class="photo-grid photo-grid--1">
 <figure><a class="lightbox" data-gallery="opening" href="{static}/assets/events/kickoff/photos/01.jpg"><img src="{static}/assets/events/kickoff/photos/01-thumb.jpg" alt="Harald Nezbeda walking the audience through the evening's agenda" loading="lazy"></a><figcaption>Harald Nezbeda walking the audience through the evening's agenda</figcaption></figure>
-<figure><a class="lightbox" data-gallery="opening" href="{static}/assets/events/kickoff/photos/00.jpg"><img src="{static}/assets/events/kickoff/photos/00-thumb.jpg" alt="A full Omansaal seen from the back row during the first talk of PyCarinthia #1" loading="lazy"></a><figcaption>A full Omansaal seen from the back row during the first talk of PyCarinthia #1</figcaption></figure>
 </div>
 
 ## The talks
@@ -38,9 +37,10 @@ Benjamin talked about the evolution, the technical challenges, and the community
 - **Moving to 3D.** A large part of the talk covered the long refactoring towards an OpenGL-based 3D renderer. Because the community version had diverged so far from the original, this was a massive undertaking, and AI turned out to be a real force multiplier for the large-scale refactoring.
 - **Maintenance in the age of AI.** Benjamin also showed the unglamorous side: floods of low-quality, automated pull requests from AI agents hunting for good first issues, governance and interpersonal conflicts in a community-led project, sustainable onboarding for new contributors, and why a project needs a clear AI policy so that humans stay in charge of its direction.
 
-<div class="photo-grid">
+<div class="photo-grid photo-grid--2">
 <figure><a class="lightbox" data-gallery="benjamin" href="{static}/assets/events/kickoff/photos/02.jpg"><img src="{static}/assets/events/kickoff/photos/02-thumb.jpg" alt="Benjamin Hackl next to his title slide, Musings from Maintaining Manim" loading="lazy"></a><figcaption>Benjamin Hackl next to his title slide, Musings from Maintaining Manim</figcaption></figure>
 <figure><a class="lightbox" data-gallery="benjamin" href="{static}/assets/events/kickoff/photos/03.jpg"><img src="{static}/assets/events/kickoff/photos/03-thumb.jpg" alt="Benjamin Hackl live-demoing Manim shapes in a Jupyter notebook" loading="lazy"></a><figcaption>Benjamin Hackl live-demoing Manim shapes in a Jupyter notebook</figcaption></figure>
+<figure><a class="lightbox" data-gallery="benjamin" href="{static}/assets/events/kickoff/photos/00.jpg"><img src="{static}/assets/events/kickoff/photos/00-thumb.jpg" alt="A full Omansaal seen from the back row during the first talk of PyCarinthia #1" loading="lazy"></a><figcaption>A full Omansaal seen from the back row during the first talk of PyCarinthia #1</figcaption></figure>
 <figure><a class="lightbox" data-gallery="benjamin" href="{static}/assets/events/kickoff/photos/04.jpg"><img src="{static}/assets/events/kickoff/photos/04-thumb.jpg" alt="Benjamin Hackl pointing at a chart of Manim pull request reviewers per year" loading="lazy"></a><figcaption>Benjamin Hackl pointing at a chart of Manim pull request reviewers per year</figcaption></figure>
 </div>
 
