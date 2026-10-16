@@ -20,7 +20,7 @@ On 14 October 2026 the Omansaal at the University of Klagenfurt filled up for th
 
 ## Opening
 
-Harald Nezbeda opened the evening with what PyCarinthia is meant to be: a free, open meetup for everyone in Carinthia who builds with Python and AI, from students and researchers to professionals and hobbyists. He introduced the Code of Conduct, thanked the FTF (Förderverein Technische Fakultät) and the University of Klagenfurt for their support, and walked through the agenda.
+Harald opened the evening with what PyCarinthia is meant to be: a free, open meetup for everyone in Carinthia who builds with Python and AI, from students and researchers to professionals and hobbyists. He introduced the Code of Conduct, thanked the FTF (Förderverein Technische Fakultät) and the University of Klagenfurt for their support, and walked through the agenda.
 
 <div class="photo-grid photo-grid--1">
 <figure><a class="lightbox" data-gallery="opening" href="{static}/assets/events/kickoff/photos/01.jpg"><img src="{static}/assets/events/kickoff/photos/01-thumb.jpg" alt="Harald Nezbeda walking the audience through the evening's agenda" loading="lazy"></a><figcaption>Harald Nezbeda walking the audience through the evening's agenda</figcaption></figure>
@@ -82,7 +82,7 @@ In the final talk, Christian showed a system for reverse-engineering printed cir
 
 The evening closed with a group photo of the speakers and organisers, followed by food and drinks. Small groups formed around each of the speakers, and the conversations carried on long after the last slide.
 
-A big thank you to Gabriel Lipnik, who took care of the logistics, organised the food, and took many of the photos on this page.
+A big thank you to Gabriel, who took care of the logistics, organised the food, and took many of the photos on this page.
 
 <div class="photo-grid photo-grid--2">
 <figure><a class="lightbox" data-gallery="after" href="{static}/assets/events/kickoff/photos/11.jpg"><img src="{static}/assets/events/kickoff/photos/11-thumb.jpg" alt="Organiser Harald Nezbeda, speakers Benjamin Hackl, Alina Nessel and Christian Klimbacher, and organiser Gabriel Lipnik in front of the PyCarinthia #1 title slide" loading="lazy"></a><figcaption>Organiser Harald Nezbeda, speakers Benjamin Hackl, Alina Nessel and Christian Klimbacher, and organiser Gabriel Lipnik in front of the PyCarinthia #1 title slide</figcaption></figure>
