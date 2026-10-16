@@ -16,48 +16,12 @@ External_url: https://www.meetup.com/pycarinthia/events/316488225/
 External_label: RSVP on Meetup
 Image: assets/events/kickoff/social.jpg
 Poster: assets/events/kickoff/poster.jpg
-Slides: slides/1/
+Recap: events/kickoff-python-ai-carinthia/recap/
+Recap_image: assets/events/kickoff/photos/00-thumb.jpg
 
 The first PyCarinthia meetup. The goal is simple: meet the people in Carinthia who build with Python and AI, and shape the community together.
 
 The evening opens with a short intro to what PyCarinthia is and what it can become, followed by two to three talks on Python, AI, and everything around them. Afterwards there is open discussion and drinks. Details on the exact schedule will follow.
-
-## How it went
-
-<div class="recap" markdown="1">
-
-On 14 October the Omansaal at the University of Klagenfurt filled up for the very first PyCarinthia meetup. Three talks, plenty of questions, and conversations that carried on well past the official end over drinks.
-
-<a class="lightbox photo-hero" href="{static}/assets/events/kickoff/photos/00.jpg"><img src="{static}/assets/events/kickoff/photos/00.jpg" alt="A full Omansaal seen from the back row during the first talk of PyCarinthia #1"></a>
-
-<a class="button dark" href="/slides/1/" target="_blank" rel="noopener">View the slides</a>
-
-### The talks
-
-**Benjamin Hackl – Musings from Maintaining Manim.** Benjamin showed why code-driven animation still beats prompted video when precision and consistency matter, and told the story of the Manim Community fork. He walked through the long road to an OpenGL 3D renderer, where AI turned out to be a real force multiplier for the refactoring, and the less glamorous side of maintenance: floods of low-quality AI pull requests, governance, and why a project needs a clear AI policy.
-
-**Alina Nessel – LiveSaferOverview.** Tunnel accidents are rare, which makes them chaotic for rescue teams, and GPS does not work underground. Alina's system reuses the existing tunnel cameras: a detection model trained on footage recorded with fire brigade, Red Cross and police tracks emergency vehicles and shows on a live map which emergency exits are occupied. The project has won several awards, including the Bosch Innovation Award.
-
-**Christian Klimbacher – When AI Calls a Multimeter for Help.** Old industrial machines often come without schematics. Christian's pipeline starts from a phone photo of a circuit board: a vision model locates and reads the components, datasheets are fetched automatically to build a bill of materials, and a multimeter checks the values in-circuit before anything is trusted. Next up: rebuilding the netlist from the traces, always with the technician in the loop.
-
-<div class="photo-grid">
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/01.jpg"><img src="{static}/assets/events/kickoff/photos/01-thumb.jpg" alt="Harald Nezbeda walking the audience through the evening's agenda" loading="lazy"></a>
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/02.jpg"><img src="{static}/assets/events/kickoff/photos/02-thumb.jpg" alt="Benjamin Hackl next to his title slide, Musings from Maintaining Manim" loading="lazy"></a>
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/03.jpg"><img src="{static}/assets/events/kickoff/photos/03-thumb.jpg" alt="Benjamin Hackl live-demoing Manim shapes in a Jupyter notebook" loading="lazy"></a>
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/04.jpg"><img src="{static}/assets/events/kickoff/photos/04-thumb.jpg" alt="Benjamin Hackl pointing at a chart of Manim pull request reviewers per year" loading="lazy"></a>
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/05.jpg"><img src="{static}/assets/events/kickoff/photos/05-thumb.jpg" alt="Alina Nessel opening her LiveSaferOverview talk on saving lives in tunnels with AI" loading="lazy"></a>
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/06.jpg"><img src="{static}/assets/events/kickoff/photos/06-thumb.jpg" alt="Alina Nessel presenting AI detection of emergency vehicles in tunnel camera feeds" loading="lazy"></a>
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/07.jpg"><img src="{static}/assets/events/kickoff/photos/07-thumb.jpg" alt="Christian Klimbacher beside his title slide, When AI Calls a Multimeter for Help" loading="lazy"></a>
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/08.jpg"><img src="{static}/assets/events/kickoff/photos/08-thumb.jpg" alt="The audience following a system diagram during the third talk" loading="lazy"></a>
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/09.jpg"><img src="{static}/assets/events/kickoff/photos/09-thumb.jpg" alt="Christian Klimbacher taking a live measurement with multimeter probes on stage" loading="lazy"></a>
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/10.jpg"><img src="{static}/assets/events/kickoff/photos/10-thumb.jpg" alt="Christian Klimbacher showing his circuit board analysis tool on the projector" loading="lazy"></a>
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/11.jpg"><img src="{static}/assets/events/kickoff/photos/11-thumb.jpg" alt="Organiser Harald Nezbeda, speakers Benjamin Hackl, Alina Nessel and Christian Klimbacher, and organiser Gabriel Lipnik in front of the PyCarinthia #1 title slide" loading="lazy"></a>
-<a class="lightbox" href="{static}/assets/events/kickoff/photos/12.jpg"><img src="{static}/assets/events/kickoff/photos/12-thumb.jpg" alt="Attendees chatting around the multimeter after the talks" loading="lazy"></a>
-</div>
-
-<p class="photo-credit">Photos: Gabriel Lipnik and Harald Nezbeda</p>
-
-</div>
 
 ## Speakers
 
