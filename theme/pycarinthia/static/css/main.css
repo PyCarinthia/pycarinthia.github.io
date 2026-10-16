@@ -1036,6 +1036,39 @@ a.lightbox {
     var(--lake-dark);
 }
 
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
+  gap: 16px;
+}
+
+/* Sponsor logos are dark-on-white artwork, so the tile stays white in both themes. */
+.sponsor-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  background: #ffffff;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow);
+}
+
+.sponsor-card img {
+  display: block;
+  width: 100%;
+  max-height: 64px;
+  object-fit: contain;
+}
+
 .footer-logo {
   display: block;
   margin: 0 auto 34px;

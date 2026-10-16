@@ -160,6 +160,19 @@ ORGANIZERS = [
     },
 ]
 
+SPONSORS = [
+    {
+        "name": "FTF – Förderverein Technische Fakultät",
+        "href": "https://www.ftf.or.at/",
+        "logo": "assets/sponsors/ftf.png",
+    },
+    {
+        "name": "Anexia Digital",
+        "href": "https://anexia.com/",
+        "logo": "assets/sponsors/anexia-digital.svg",
+    },
+]
+
 CONNECT_LINKS = [
     {
         "label": "Meetup",

@@ -201,4 +201,26 @@
       </div>
     </div>
   </section>
+
+  {% if SPONSORS %}
+    <section class="section alt" id="sponsors">
+      <div class="shell">
+        <div class="section-header">
+          <p class="section-kicker">Sponsors</p>
+          <h2 class="section-heading">Thanks to our supporters.</h2>
+          <p class="lead">
+            PyCarinthia stays free for everyone because these organisations
+            support it.
+          </p>
+        </div>
+        <div class="sponsor-grid">
+          {% for sponsor in SPONSORS %}
+            <a class="sponsor-card" href="{{ sponsor.href }}" target="_blank" rel="noopener noreferrer">
+              <img src="{{ SITEURL }}/{{ sponsor.logo }}" alt="{{ sponsor.name }}" loading="lazy" decoding="async">
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
 {% endblock %}
