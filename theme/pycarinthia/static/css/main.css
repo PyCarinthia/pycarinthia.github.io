@@ -409,7 +409,7 @@ a {
 }
 
 .hero-logo {
-  width: clamp(200px, 34vw, 380px);
+  width: clamp(80px, 13.6vw, 152px);
   height: auto;
 }
 
@@ -1174,7 +1174,7 @@ a.lightbox {
 .footer-logo {
   display: block;
   margin: 0 auto 34px;
-  width: 120px;
+  width: 48px;
   height: auto;
 }
 
@@ -1296,7 +1296,7 @@ a.lightbox {
   }
 
   .hero-logo {
-    max-width: 240px;
+    max-width: 96px;
     justify-self: center;
   }
 

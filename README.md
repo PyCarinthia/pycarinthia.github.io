@@ -76,20 +76,19 @@ Order: 10
 
 ## Regenerate icons and logo assets
 
-`content/assets/logo-source.png` is the pristine, opaque source logo and the
-only file to replace when the logo changes. Every other logo and icon asset
-in `content/assets/` is derived from it and regenerated with:
+`content/assets/logo.svg` is the source logo and the only file to replace
+when the logo changes. The site shows it directly (header, hero, footer). It
+must sit on a transparent background so it works on the dark theme. The
+raster icons in `content/assets/` are derived from it and regenerated with:
 
 ```sh
-uv run --with pillow python tools/make_icons.py
+uv run --with pillow --with resvg-py python tools/make_icons.py
 ```
 
-This script is a one-off tool, not part of the site build, so Pillow is
-deliberately not a project dependency — it is installed ad hoc for this one
-run instead. The command writes:
+This script is a one-off tool, not part of the site build, so Pillow and
+resvg are deliberately not project dependencies — they are installed ad hoc
+for this one run instead. The command writes:
 
-- `logo.png` — transparent logo
-- `logo-mark.png` — square brand mark
 - `favicon.ico`
 - `icon-192.png` and `icon-512.png`
 - `apple-touch-icon.png`

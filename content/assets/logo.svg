@@ -1,0 +1,331 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="43 68 905 861" width="905" height="861">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="sky-left" x1="0%" y1="0%" x2="20%" y2="100%">
+      <stop offset="0%" stop-color="#156db6" />
+      <stop offset="50%" stop-color="#1b7bc8" />
+      <stop offset="100%" stop-color="#2288d6" />
+    </linearGradient>
+
+    <linearGradient id="sky-right" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4bb3e8" />
+      <stop offset="100%" stop-color="#5ac0f0" />
+    </linearGradient>
+
+    <linearGradient id="lake-grad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#54bcf0" />
+      <stop offset="45%" stop-color="#359fd9" />
+      <stop offset="100%" stop-color="#2387d1" />
+    </linearGradient>
+
+    <linearGradient id="deep-water" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#105293" />
+      <stop offset="100%" stop-color="#1667b3" />
+    </linearGradient>
+
+    <!-- Top-Left Python Shape Clip Path -->
+    <clipPath id="top-snake-clip">
+      <path d="M 279 280 
+               L 279 180 
+               C 279 96, 378 72, 488 72 
+               C 598 72, 698 96, 698 185 
+               L 698 355 
+               C 698 445, 635 502, 545 502 
+               L 395 502 
+               C 300 502, 251 560, 251 645 
+               L 251 717 
+               L 178 717 
+               C 92 717, 47 642, 47 500 
+               C 47 358, 92 280, 185 280 Z" />
+    </clipPath>
+
+    <!-- Bottom-Right Python Shape Clip Path -->
+    <clipPath id="bottom-snake-clip">
+      <path d="M 726 280 
+               L 805 280 
+               C 895 280, 944 358, 944 500 
+               C 944 642, 895 717, 805 717 
+               L 486 717 
+               L 486 747 
+               L 705 747 
+               L 705 818 
+               C 705 900, 605 925, 492 925 
+               C 380 925, 280 900, 280 818 
+               L 280 645 
+               C 280 572, 322 530, 405 530 
+               L 548 530 
+               C 655 530, 726 462, 726 355 Z" />
+    </clipPath>
+  </defs>
+
+
+  <!-- ========================================== -->
+  <!-- TOP-LEFT PYTHON SHAPE (MOUNTAIN RANGE)     -->
+  <!-- ========================================== -->
+  <g clip-path="url(#top-snake-clip)">
+    <!-- Sky Background -->
+    <rect x="0" y="0" width="750" height="750" fill="url(#sky-left)" />
+
+    <!-- Horizontal White Cutout (Underneath the Central Mountain Peak) -->
+    <rect x="270" y="250" width="200" height="30" fill="#ffffff" />
+
+    <!-- Top-Left Eye / Sun -->
+    <circle cx="369" cy="166" r="37" fill="#f8fcff" />
+
+    <!-- Base Dark Blue Mountain Silhouette -->
+    <path d="M 40 465 
+             L 149 365 
+             L 196 412 
+             L 328 280 
+             L 373 330 
+             L 503 180 
+             L 578 267 
+             L 603 241 
+             L 710 355 
+             L 710 730 
+             L 40 730 Z" fill="#12589c" />
+
+    <!-- Deep Navy Mountain Outlines & Shadow Ridges -->
+    <path d="M 40 465 
+             L 149 365 
+             L 196 412 
+             L 328 280 
+             L 373 330 
+             L 503 180 
+             L 578 267 
+             L 603 241 
+             L 710 355 
+             L 710 390 
+             L 603 270 
+             L 578 295 
+             L 503 212 
+             L 386 344 
+             L 448 412 
+             L 435 425 
+             L 328 307 
+             L 196 440 
+             L 149 392 
+             L 40 495 Z" fill="#0d4a85" />
+
+    <!-- Dark Navy Foreground Left Base -->
+    <path d="M 40 542 
+             C 105 510, 150 455, 196 412 
+             L 328 280 
+             L 448 412 
+             L 466 425 
+             L 500 412 
+             L 578 446 
+             L 500 520 
+             L 300 730 
+             L 40 730 Z" fill="#0e4e8c" />
+
+    <!-- 1. Far-Left Peak Snow Cap -->
+    <path d="M 149 392 
+             L 48 485 
+             L 131 426 
+             L 125 464 
+             L 150 418 
+             L 178 439 
+             L 188 427 Z" fill="#f8fcff" />
+
+    <!-- 2. Main Central Peak & Sub-Peak Snow Caps -->
+    <!-- Left Sunlit Snow (White) -->
+    <path d="M 503 212 
+             L 386 344 
+             L 448 297 
+             L 442 326 
+             L 480 293 
+             L 479 343 
+             L 510 286 Z" fill="#f8fcff" />
+
+    <!-- Right Shadowed Snow & Sub-Peak Snow (Ice Blue) -->
+    <path d="M 503 212 
+             L 510 286 
+             L 527 304 
+             L 524 275 
+             L 585 314 
+             L 632 381 
+             L 620 328 
+             L 683 369 
+             L 608 272 
+             L 581 295 Z" fill="#cdeaf8" />
+
+    <!-- Central Peak Mid-Blue Facets -->
+    <path d="M 448 297 
+             L 402 360 
+             L 432 394 
+             L 479 343 
+             L 480 293 
+             L 442 326 Z" fill="#2389d7" />
+
+    <path d="M 510 286 
+             L 480 355 
+             L 508 335 
+             L 526 362 
+             L 518 318 Z" fill="#2389d7" />
+
+    <path d="M 445 395 
+             L 518 345 
+             L 535 398 
+             L 578 446 
+             L 500 412 
+             L 466 425 Z" fill="#2389d7" />
+
+    <!-- 3. Mid-Left Prominent Peak Snow & Glacier Facets -->
+    <!-- Bright Blue Sweeping Left Glacier Facet -->
+    <path d="M 233 402 
+             L 132 502 
+             L 221 456 
+             L 103 597 
+             L 201 526 
+             L 206 567 
+             L 276 455 
+             L 288 476 
+             L 321 398 
+             L 321 368 
+             L 290 402 
+             L 292 362 Z" fill="#2389d7" />
+
+    <!-- Center-Right Rib Facet on Mid-Left Peak -->
+    <path d="M 335 363 
+             L 326 398 
+             L 296 472 
+             L 324 446 
+             L 315 478 
+             L 352 415 
+             L 367 402 Z" fill="#2389d7" />
+
+    <!-- Mid-Left Peak Snow Cap (White Left Face) -->
+    <path d="M 328 307 
+             L 233 402 
+             L 292 362 
+             L 290 402 
+             L 321 368 
+             L 326 398 
+             L 335 363 Z" fill="#f8fcff" />
+
+    <!-- Mid-Left Peak Snow Cap (Ice Blue Right Face) -->
+    <path d="M 328 307 
+             L 335 363 
+             L 367 402 
+             L 345 348 
+             L 439 424 Z" fill="#cdeaf8" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- BOTTOM-RIGHT PYTHON SHAPE (LAKE & PEAK)    -->
+  <!-- ========================================== -->
+  <g clip-path="url(#bottom-snake-clip)">
+    <!-- Upper-Right Sky -->
+    <rect x="500" y="250" width="460" height="260" fill="url(#sky-right)" />
+
+    <!-- Right Arm Mountain -->
+    <!-- Mountain Base -->
+    <path d="M 520 509 
+             L 685 509 
+             L 802 323 
+             L 898 412 
+             L 950 436 
+             L 950 509 Z" fill="#135ca1" />
+
+    <!-- Dark Blue Mountain Rim -->
+    <path d="M 685 509 
+             L 802 323 
+             L 898 412 
+             L 950 436 
+             L 950 455 
+             L 892 428 
+             L 802 350 
+             L 725 425 
+             L 695 509 Z" fill="#0d4a85" />
+
+    <!-- Right Mountain Mid-Blue Shadow Facet -->
+    <path d="M 822 393 
+             L 832 457 
+             L 840 442 
+             L 864 466 
+             L 848 402 Z" fill="#39a0df" />
+
+    <!-- Right Mountain Snow Cap (White Left) -->
+    <path d="M 802 350 
+             L 725 425 
+             L 792 375 
+             L 832 457 
+             L 822 393 Z" fill="#f8fcff" />
+
+    <!-- Right Mountain Snow Cap (Ice Blue Right) -->
+    <path d="M 802 350 
+             L 822 393 
+             L 852 415 
+             L 845 400 
+             L 914 452 Z" fill="#cdeaf8" />
+
+    <!-- Lake Water Base -->
+    <rect x="270" y="508" width="680" height="430" fill="url(#lake-grad)" />
+
+    <!-- Right Shoreline Dark Blue Ripple -->
+    <path d="M 950 610 
+             C 890 612, 810 618, 810 626 
+             C 810 634, 885 642, 950 645 Z" fill="#1668b2" />
+
+    <!-- Left Mid-Lake Dark Blue Tongue -->
+    <path d="M 275 616 
+             C 345 620, 435 625, 435 633 
+             C 435 641, 345 646, 275 648 Z" fill="#1562a8" />
+
+    <!-- Lower Snake Deep Water & Winding Current -->
+    <!-- Deep Blue Water Base -->
+    <path d="M 275 662 
+             C 350 668, 425 680, 425 692 
+             C 425 706, 312 715, 312 738 
+             C 312 762, 552 795, 552 818 
+             C 552 835, 436 840, 436 856 
+             C 436 874, 560 885, 675 882 
+             L 675 935 
+             L 275 935 Z" fill="url(#deep-water)" />
+
+    <!-- Lower-Right Dark Blue Water Lobe (Above Bottom Eye) -->
+    <path d="M 480 745 
+             C 510 765, 635 772, 710 755 
+             L 710 835 
+             C 665 825, 595 795, 480 745 Z" fill="#1564ae" />
+
+    <!-- Winding Mid-Blue River Current Highlight -->
+    <path d="M 425 692 
+             C 425 706, 312 715, 312 738 
+             C 312 762, 552 795, 552 818 
+             C 552 835, 436 840, 436 856 
+             C 436 874, 575 888, 690 878 
+             L 710 825 
+             C 645 815, 570 790, 470 748 
+             C 400 732, 360 732, 360 722 
+             C 360 712, 455 705, 455 692 Z" fill="#2690db" />
+
+    <!-- White Water Reflection -->
+    <path d="M 342 508 
+             L 876 508 
+             C 820 515, 740 520, 695 526 
+             C 675 529, 728 534, 728 542 
+             C 728 550, 652 555, 652 564 
+             C 652 572, 690 573, 690 581 
+             C 690 589, 648 592, 648 600 
+             C 648 607, 685 610, 683 620 
+             C 680 632, 635 638, 600 635 
+             C 570 632, 568 625, 585 620 
+             C 605 615, 622 612, 618 607 
+             C 612 600, 488 598, 488 590 
+             C 488 582, 588 580, 585 572 
+             C 582 564, 372 564, 372 556 
+             C 372 548, 545 550, 545 544 
+             C 545 538, 425 540, 425 534 
+             C 425 528, 525 528, 525 523 
+             C 525 518, 410 514, 342 508 Z" fill="#f8fcff" />
+
+    <!-- Small White Oval Water Ripples -->
+    <ellipse cx="792" cy="555" rx="31" ry="8" fill="#f8fcff" />
+    <ellipse cx="743" cy="591" rx="27" ry="7.5" fill="#f8fcff" />
+
+    <!-- Bottom-Right Eye -->
+    <circle cx="608" cy="830" r="37" fill="#f8fcff" />
+  </g>
+</svg>
