@@ -17,7 +17,7 @@ External_label: RSVP on Meetup
 Image: assets/events/kickoff/social.jpg
 Poster: assets/events/kickoff/poster.jpg
 Recap: events/kickoff-python-ai-carinthia/recap/
-Recap_image: assets/events/kickoff/photos/00-thumb.jpg
+Recap_image: assets/events/kickoff/photos/title-thumb.jpg
 
 The first PyCarinthia meetup. The goal is simple: meet the people in Carinthia who build with Python and AI, and shape the community together.
 

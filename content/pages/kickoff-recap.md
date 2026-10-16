@@ -8,10 +8,10 @@ Event_date_label: 14 October 2026
 Venue: Omansaal, University of Klagenfurt
 Event: events/kickoff-python-ai-carinthia/
 Slides: slides/1/
-Image: assets/events/kickoff/photos/00.jpg
+Image: assets/events/kickoff/photos/title.jpg
 
 <div class="photo-hero">
-<figure><a class="lightbox" data-gallery="hero" href="{static}/assets/events/kickoff/photos/00.jpg"><img src="{static}/assets/events/kickoff/photos/00.jpg" alt="A full Omansaal seen from the back row during the first talk of PyCarinthia #1"></a><figcaption>A full Omansaal seen from the back row during the first talk of PyCarinthia #1</figcaption></figure>
+<figure><a class="lightbox" href="{static}/assets/events/kickoff/photos/title.jpg"><img src="{static}/assets/events/kickoff/photos/title.jpg" alt="Title slide: PyCarinthia #1 – hello_world, Python &amp; AI meetup, 14 October 2026, Omansaal, University of Klagenfurt"></a></figure>
 </div>
 
 On 14 October 2026 the Omansaal at the University of Klagenfurt filled up for the very first PyCarinthia meetup. After a short welcome, three speakers took the stage: a maintainer's view on one of the best-known Python animation libraries, an AI system that helps rescue teams in highway tunnels, and a pipeline that teaches a language model to ask a multimeter for help. Plenty of questions followed each talk, and the conversations carried on well past the official end.
@@ -22,7 +22,8 @@ On 14 October 2026 the Omansaal at the University of Klagenfurt filled up for th
 
 Harald Nezbeda and Gabriel Lipnik opened the evening with what PyCarinthia is meant to be: a free, open meetup for everyone in Carinthia who builds with Python and AI, from students and researchers to professionals and hobbyists. They introduced the Code of Conduct, thanked the FTF (Förderverein Technische Fakultät) and the University of Klagenfurt for their support, and walked through the agenda.
 
-<div class="photo-grid photo-grid--1">
+<div class="photo-grid photo-grid--2">
+<figure><a class="lightbox" data-gallery="opening" href="{static}/assets/events/kickoff/photos/00.jpg"><img src="{static}/assets/events/kickoff/photos/00-thumb.jpg" alt="A full Omansaal seen from the back row during the first talk of PyCarinthia #1" loading="lazy"></a><figcaption>A full Omansaal seen from the back row during the first talk of PyCarinthia #1</figcaption></figure>
 <figure><a class="lightbox" data-gallery="opening" href="{static}/assets/events/kickoff/photos/01.jpg"><img src="{static}/assets/events/kickoff/photos/01-thumb.jpg" alt="Harald Nezbeda walking the audience through the evening's agenda" loading="lazy"></a><figcaption>Harald Nezbeda walking the audience through the evening's agenda</figcaption></figure>
 </div>
 
