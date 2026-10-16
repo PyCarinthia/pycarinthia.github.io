@@ -1173,8 +1173,9 @@ a.lightbox {
 
 .sponsor-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+  max-width: 760px;
 }
 
 /* Sponsor logos are dark-on-white artwork, so the tile stays white in both themes. */
@@ -1182,11 +1183,12 @@ a.lightbox {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 120px;
+  height: 140px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 24px 28px;
+  padding: 24px 32px;
   background: #ffffff;
+  box-shadow: var(--hover-shadow);
   transition:
     transform 160ms ease,
     box-shadow 160ms ease;
@@ -1194,14 +1196,26 @@ a.lightbox {
 
 .sponsor-card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--hover-shadow);
+  box-shadow: var(--shadow);
 }
 
+/* Cap by height so wide lockups and slim wordmarks end up visually balanced. */
 .sponsor-card img {
   display: block;
-  width: 100%;
-  max-height: 64px;
-  object-fit: contain;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 56px;
+}
+
+.sponsor-cta {
+  margin: 24px 0 0;
+  color: var(--muted);
+}
+
+.sponsor-cta a {
+  color: var(--lake);
+  font-weight: 760;
 }
 
 .footer-logo {
@@ -1405,6 +1419,14 @@ a.lightbox {
   .resource-grid,
   .connect-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sponsor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-card {
+    height: 112px;
   }
 
   .section {

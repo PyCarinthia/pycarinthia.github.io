@@ -1,5 +1,6 @@
 from pathlib import Path
 from datetime import datetime
+import hashlib
 import os
 import sys
 
@@ -36,6 +37,8 @@ DEFAULT_LANG = "en"
 DEFAULT_DATE_FORMAT = "%d %B %Y"
 WITH_FUTURE_DATES = True
 CURRENTYEAR = datetime.now().year
+# Appended to the stylesheet URL so browsers fetch a fresh copy whenever it changes.
+CSS_VERSION = hashlib.sha1((ROOT / THEME / "static" / "css" / "main.css").read_bytes()).hexdigest()[:10]
 
 ARTICLE_PATHS = ["events", "resources", "_remote/events", "_remote/resources"]
 PAGE_PATHS = ["pages"]
