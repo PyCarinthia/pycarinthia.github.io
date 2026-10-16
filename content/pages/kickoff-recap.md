@@ -38,6 +38,8 @@ Benjamin talked about the evolution, the technical challenges, and the community
 - **Moving to 3D.** A large part of the talk covered the long refactoring towards an OpenGL-based 3D renderer. Because the community version had diverged so far from the original, this was a massive undertaking, and AI turned out to be a real force multiplier for the large-scale refactoring.
 - **Maintenance in the age of AI.** Benjamin also showed the unglamorous side: floods of low-quality, automated pull requests from AI agents hunting for good first issues, governance and interpersonal conflicts in a community-led project, sustainable onboarding for new contributors, and why a project needs a clear AI policy so that humans stay in charge of its direction.
 
+Benjamin's slides are online at [behackl.dev/slides/2026-10-pycarinthia](https://behackl.dev/slides/2026-10-pycarinthia/), and the project lives at [manim.community](https://www.manim.community/).
+
 <div class="photo-grid photo-grid--2">
 <figure><a class="lightbox" data-gallery="benjamin" href="{static}/assets/events/kickoff/photos/02.jpg"><img src="{static}/assets/events/kickoff/photos/02-thumb.jpg" alt="Benjamin Hackl next to his title slide, Musings from Maintaining Manim" loading="lazy"></a><figcaption>Benjamin Hackl next to his title slide, Musings from Maintaining Manim</figcaption></figure>
 <figure><a class="lightbox" data-gallery="benjamin" href="{static}/assets/events/kickoff/photos/03.jpg"><img src="{static}/assets/events/kickoff/photos/03-thumb.jpg" alt="Benjamin Hackl live-demoing Manim shapes in a Jupyter notebook" loading="lazy"></a><figcaption>Benjamin Hackl live-demoing Manim shapes in a Jupyter notebook</figcaption></figure>
