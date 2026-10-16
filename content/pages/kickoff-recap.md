@@ -22,8 +22,9 @@ On 14 October 2026 the Omansaal at the University of Klagenfurt filled up for th
 
 Harald opened the evening with what PyCarinthia is meant to be: a free, open meetup for everyone in Carinthia who builds with Python and AI, from students and researchers to professionals and hobbyists. He introduced the Code of Conduct, thanked the FTF (Förderverein Technische Fakultät) and the University of Klagenfurt for their support, and walked through the agenda.
 
-<div class="photo-grid photo-grid--1">
+<div class="photo-grid photo-grid--2">
 <figure><a class="lightbox" data-gallery="opening" href="{static}/assets/events/kickoff/photos/01.jpg"><img src="{static}/assets/events/kickoff/photos/01-thumb.jpg" alt="Harald Nezbeda walking the audience through the evening's agenda" loading="lazy"></a><figcaption>Harald Nezbeda walking the audience through the evening's agenda</figcaption></figure>
+<figure><a class="lightbox" data-gallery="opening" href="{static}/assets/events/kickoff/photos/14.jpg"><img src="{static}/assets/events/kickoff/photos/14-thumb.jpg" alt="The audience in the Omansaal ready for the first talk" loading="lazy"></a><figcaption>The audience in the Omansaal ready for the first talk</figcaption></figure>
 </div>
 
 ## The talks
