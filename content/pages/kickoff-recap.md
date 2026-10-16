@@ -78,11 +78,11 @@ In the final talk, Christian showed a system for reverse-engineering printed cir
 
 ## After the talks
 
-The evening closed with a group photo of the speakers and organisers, followed by drinks and long conversations, some of them around Christian's multimeter.
+The evening closed with a group photo of the speakers and organisers, followed by drinks. Small groups formed around each of the speakers, and the conversations carried on long after the last slide.
 
 <div class="photo-grid photo-grid--2">
 <figure><a class="lightbox" data-gallery="after" href="{static}/assets/events/kickoff/photos/11.jpg"><img src="{static}/assets/events/kickoff/photos/11-thumb.jpg" alt="Organiser Harald Nezbeda, speakers Benjamin Hackl, Alina Nessel and Christian Klimbacher, and organiser Gabriel Lipnik in front of the PyCarinthia #1 title slide" loading="lazy"></a><figcaption>Organiser Harald Nezbeda, speakers Benjamin Hackl, Alina Nessel and Christian Klimbacher, and organiser Gabriel Lipnik in front of the PyCarinthia #1 title slide</figcaption></figure>
-<figure><a class="lightbox" data-gallery="after" href="{static}/assets/events/kickoff/photos/12.jpg"><img src="{static}/assets/events/kickoff/photos/12-thumb.jpg" alt="Attendees chatting around the multimeter after the talks" loading="lazy"></a><figcaption>Attendees chatting around the multimeter after the talks</figcaption></figure>
+<figure><a class="lightbox" data-gallery="after" href="{static}/assets/events/kickoff/photos/12.jpg"><img src="{static}/assets/events/kickoff/photos/12-thumb.jpg" alt="One of the groups that formed around the speakers after the talks, here with Christian and his multimeter" loading="lazy"></a><figcaption>One of the groups that formed around the speakers after the talks, here with Christian and his multimeter</figcaption></figure>
 </div>
 
 ## Gallery
@@ -100,7 +100,7 @@ The evening closed with a group photo of the speakers and organisers, followed b
 <figure><a class="lightbox" data-gallery="gallery" href="{static}/assets/events/kickoff/photos/09.jpg"><img src="{static}/assets/events/kickoff/photos/09-thumb.jpg" alt="Christian Klimbacher taking a live measurement with multimeter probes on stage" loading="lazy"></a><figcaption>Christian Klimbacher taking a live measurement with multimeter probes on stage</figcaption></figure>
 <figure><a class="lightbox" data-gallery="gallery" href="{static}/assets/events/kickoff/photos/10.jpg"><img src="{static}/assets/events/kickoff/photos/10-thumb.jpg" alt="Christian Klimbacher showing his circuit board analysis tool on the projector" loading="lazy"></a><figcaption>Christian Klimbacher showing his circuit board analysis tool on the projector</figcaption></figure>
 <figure><a class="lightbox" data-gallery="gallery" href="{static}/assets/events/kickoff/photos/11.jpg"><img src="{static}/assets/events/kickoff/photos/11-thumb.jpg" alt="Organiser Harald Nezbeda, speakers Benjamin Hackl, Alina Nessel and Christian Klimbacher, and organiser Gabriel Lipnik in front of the PyCarinthia #1 title slide" loading="lazy"></a><figcaption>Organiser Harald Nezbeda, speakers Benjamin Hackl, Alina Nessel and Christian Klimbacher, and organiser Gabriel Lipnik in front of the PyCarinthia #1 title slide</figcaption></figure>
-<figure><a class="lightbox" data-gallery="gallery" href="{static}/assets/events/kickoff/photos/12.jpg"><img src="{static}/assets/events/kickoff/photos/12-thumb.jpg" alt="Attendees chatting around the multimeter after the talks" loading="lazy"></a><figcaption>Attendees chatting around the multimeter after the talks</figcaption></figure>
+<figure><a class="lightbox" data-gallery="gallery" href="{static}/assets/events/kickoff/photos/12.jpg"><img src="{static}/assets/events/kickoff/photos/12-thumb.jpg" alt="One of the groups that formed around the speakers after the talks, here with Christian and his multimeter" loading="lazy"></a><figcaption>One of the groups that formed around the speakers after the talks, here with Christian and his multimeter</figcaption></figure>
 </div>
 
 <p class="photo-credit">Photos: Gabriel Lipnik and Harald Nezbeda</p>
