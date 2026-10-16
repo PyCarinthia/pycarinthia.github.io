@@ -1,30 +1,30 @@
-"""Generate the PyCarinthia icon set from the source logo.
+"""Generate the PyCarinthia raster icons from the source logo.
 
-This is a one-off tool, not part of the site build. `logo-source.png` is the
-pristine, opaque original — replace that file when the logo changes. Every
-other file this script writes, including `content/assets/logo.png`, is a
-derived output: it is generated fresh from the source each run and must
-never be read back as input. Commit the generated files alongside the
-source. This needs Pillow, which is deliberately not a project dependency:
+This is a one-off tool, not part of the site build. `logo.svg` is the source
+of truth — replace that file when the logo changes. The site shows the SVG
+directly; every PNG/ICO this script writes is a derived output, generated
+fresh from the SVG each run. Commit the generated files alongside the
+source. This needs Pillow and resvg, which are deliberately not project
+dependencies:
 
-    uv run --with pillow python tools/make_icons.py
+    uv run --with pillow --with resvg-py python tools/make_icons.py
 """
 
 from __future__ import annotations
 
-from collections import deque
+import io
 from pathlib import Path
 
+import resvg_py
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "content" / "assets"
-SOURCE = ASSETS / "logo-source.png"
+SOURCE = ASSETS / "logo.svg"
 
-# How far a pixel's RGB may drift from the detected background seed and still
-# be flood-filled away. Raise this if a background halo survives around the
-# mark; lower it if the fill eats into the snow caps or the two white dots.
-BACKGROUND_TOLERANCE = 24
+# Edge length the SVG is rasterised at before any resizing. Large enough that
+# every derived icon is a downscale.
+RENDER_SIZE = 2048
 
 # Extra margin added around the cropped mark, as a fraction of its longest
 # side, before squaring it off. Raise for more breathing room around the
@@ -33,77 +33,22 @@ MARK_PADDING = 0.06
 
 OG_SIZE = (1200, 630)
 
-# Width of the logo relative to the og-image canvas width. Raise to make the
+# Width of the mark relative to the og-image canvas width. Raise to make the
 # logo more prominent in social previews; lower to leave more white margin.
-OG_LOGO_WIDTH_RATIO = 0.6
+OG_LOGO_WIDTH_RATIO = 0.25
 
 
-def strip_background(image: Image.Image) -> Image.Image:
-    """Make the outer background transparent via a flood fill from the border.
-
-    Only pixels connected to the image edge are cleared, so white areas inside
-    the mark (snow, river highlights, the two dots) keep their colour.
-    """
-    image = image.convert("RGBA")
-    width, height = image.size
-    pixels = image.load()
-    seed = pixels[0, 0][:3]
-    print(f"background seed colour: {seed}")
-
-    if any(component < 255 - BACKGROUND_TOLERANCE for component in seed):
-        raise ValueError(
-            f"background seed {seed} at pixel (0, 0) is not close to white; "
-            "check that the source's corners are plain background, not artwork, "
-            "and not already transparent"
-        )
-
-    def matches(xy: tuple[int, int]) -> bool:
-        red, green, blue, alpha = pixels[xy]
-        if alpha == 0:
-            return False
-        return all(abs(a - b) <= BACKGROUND_TOLERANCE for a, b in zip((red, green, blue), seed))
-
-    visited = [[False] * width for _ in range(height)]
-    queue: deque[tuple[int, int]] = deque()
-
-    for x in range(width):
-        for y in (0, height - 1):
-            queue.append((x, y))
-    for y in range(height):
-        for x in (0, width - 1):
-            queue.append((x, y))
-
-    cleared = 0
-    while queue:
-        x, y = queue.popleft()
-        if not (0 <= x < width and 0 <= y < height) or visited[y][x]:
-            continue
-        visited[y][x] = True
-        if not matches((x, y)):
-            continue
-        pixels[x, y] = (0, 0, 0, 0)
-        cleared += 1
-        queue.extend(((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)))
-
-    if cleared == 0:
-        raise ValueError(
-            "background flood fill cleared no pixels; BACKGROUND_TOLERANCE "
-            f"({BACKGROUND_TOLERANCE}) may be too low for this source, or the "
-            "border is not a solid background colour"
-        )
-    print(f"background flood fill cleared {cleared} pixels")
-
-    return image
+def render(path: Path) -> Image.Image:
+    """Rasterise the SVG onto a transparent canvas, keeping its aspect ratio."""
+    png = resvg_py.svg_to_bytes(svg_path=str(path), width=RENDER_SIZE)
+    return Image.open(io.BytesIO(bytes(png))).convert("RGBA")
 
 
 def square_mark(image: Image.Image) -> Image.Image:
     """Crop to the visible mark, then expand to a padded square around it."""
     box = image.getbbox()
     if box is None:
-        raise ValueError(
-            "logo has no visible pixels after background removal; check "
-            "BACKGROUND_TOLERANCE and the source image"
-        )
+        raise ValueError("logo has no visible pixels; check that logo.svg renders")
 
     left, top, right, bottom = box
     side = round(max(right - left, bottom - top) * (1 + 2 * MARK_PADDING))
@@ -127,17 +72,14 @@ def on_white(image: Image.Image, size: tuple[int, int], logo_width: int) -> Imag
 
 
 def main() -> None:
-    source = Image.open(SOURCE)
-    transparent = strip_background(source)
+    rendered = render(SOURCE)
 
-    # All checks above have passed; only now do we start writing files.
-    mark = square_mark(transparent)
+    # Fail before writing anything if the SVG gained an opaque background,
+    # which would show up as a white square on the dark theme.
+    if rendered.getpixel((0, 0))[3] != 0:
+        raise ValueError("logo.svg has an opaque background; the mark must sit on transparency")
 
-    transparent.save(ASSETS / "logo.png")
-    print(f"wrote content/assets/logo.png ({transparent.width}x{transparent.height}, transparent)")
-
-    mark.save(ASSETS / "logo-mark.png")
-    print(f"wrote content/assets/logo-mark.png ({mark.width}x{mark.height})")
+    mark = square_mark(rendered)
 
     for size in (192, 512):
         mark.resize((size, size), Image.LANCZOS).save(ASSETS / f"icon-{size}.png")
@@ -150,7 +92,7 @@ def main() -> None:
     mark.save(ASSETS / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
     print("wrote content/assets/favicon.ico (16, 32, 48)")
 
-    on_white(transparent, OG_SIZE, round(OG_SIZE[0] * OG_LOGO_WIDTH_RATIO)).save(ASSETS / "og-image.png")
+    on_white(mark, OG_SIZE, round(OG_SIZE[0] * OG_LOGO_WIDTH_RATIO)).save(ASSETS / "og-image.png")
     print(f"wrote content/assets/og-image.png ({OG_SIZE[0]}x{OG_SIZE[1]})")
 
 
