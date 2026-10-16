@@ -178,6 +178,11 @@ a {
   margin-inline: auto;
 }
 
+/* keep in-page anchors (e.g. /#sponsors) clear of the sticky header */
+html {
+  scroll-padding-top: 76px;
+}
+
 .site-header {
   position: sticky;
   top: 0;
