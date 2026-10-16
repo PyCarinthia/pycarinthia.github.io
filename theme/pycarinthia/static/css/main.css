@@ -1023,9 +1023,50 @@ a.lightbox {
   box-shadow: var(--shadow);
 }
 
+/* must out-rank .prose a.lightbox (0,2,1), which floats speaker cards */
+.recap a.lightbox {
+  float: none;
+  display: block;
+  width: auto;
+  margin: 0;
+}
+
+.recap a.lightbox.photo-hero {
+  margin: 0.4rem 0 1.4rem;
+}
+
+.recap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 1rem 0 0.6rem;
+}
+
+.photo-grid img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.photo-credit {
+  font-size: 0.9rem;
+}
+
 .prose a {
   color: var(--lake);
   font-weight: 760;
+}
+
+.prose a.button {
+  color: var(--button-dark-text);
+  margin: 0.4rem 0 1.4rem;
 }
 
 .site-footer {
@@ -1175,6 +1216,19 @@ a.lightbox {
     display: block;
     width: min(320px, 100%);
     margin: 0 auto 1.1rem;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .recap a.lightbox {
+    width: auto;
+    margin: 0;
+  }
+
+  .recap a.lightbox.photo-hero {
+    margin: 0.4rem 0 1.4rem;
   }
 
   .button {
