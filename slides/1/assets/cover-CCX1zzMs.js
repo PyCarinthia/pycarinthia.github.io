@@ -1,0 +1,1 @@
+import{o,a as s,b as t,am as a}from"./modules/vue-BtWu4y1S.js";import{u as r}from"./slidev/context-ZB-bcVcz.js";const c={class:"slidev-layout cover"},l={class:"my-auto w-full"},m={__name:"cover",setup(_){return r(),(e,n)=>(o(),s("div",c,[t("div",l,[a(e.$slots,"default")])]))}};export{m as _};

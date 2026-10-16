@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content"
 REMOTE = CONTENT / "_remote"
 OUTPUT = ROOT / "output"
+SLIDES = ROOT / "slides"
 VIENNA = ZoneInfo("Europe/Vienna")
 
 
@@ -266,6 +267,17 @@ def export_static_feeds() -> None:
     write_calendar(events)
 
 
+def copy_slides() -> None:
+    if not SLIDES.exists():
+        return
+    for deck in sorted(path for path in SLIDES.iterdir() if path.is_dir()):
+        shutil.copytree(
+            deck,
+            OUTPUT / "slides" / deck.name,
+            ignore=shutil.ignore_patterns("_redirects", ".htaccess"),
+        )
+
+
 def run_pelican(settings: str) -> None:
     subprocess.run(
         [sys.executable, "-m", "pelican", "content", "-s", settings, "-o", str(OUTPUT)],
@@ -294,6 +306,7 @@ def main() -> None:
     if OUTPUT.exists():
         shutil.rmtree(OUTPUT)
     run_pelican(args.settings)
+    copy_slides()
     export_static_feeds()
 
     if args.serve:
