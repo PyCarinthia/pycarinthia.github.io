@@ -20,6 +20,12 @@
               <span class="pill">{{ article.venue }}</span>
             {% endif %}
           </div>
+          {% if article.recap %}
+            <a class="recap-banner" href="{{ SITEURL }}/{{ article.recap }}">
+              <strong>This meetup has taken place.</strong>
+              <span>Read the recap with talk summaries, slides, and photos &rarr;</span>
+            </a>
+          {% endif %}
           <div class="prose">
             {{ article.content }}
           </div>
@@ -54,6 +60,9 @@
               <img src="{{ SITEURL }}/{{ article.poster }}" alt="Poster for {{ article.title }}" loading="lazy">
             </a>
             <a class="lightbox event-poster-link" href="{{ SITEURL }}/{{ article.poster }}">Enlarge poster</a>
+            {% if article.recap %}
+              <a class="event-poster-link" href="{{ SITEURL }}/{{ article.recap }}">Read the recap</a>
+            {% endif %}
           </aside>
         {% endif %}
       </div>

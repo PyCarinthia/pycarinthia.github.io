@@ -1001,7 +1001,7 @@ a.lightbox {
 .lightbox-dialog img {
   display: block;
   max-width: min(94vw, 1100px);
-  max-height: 94vh;
+  max-height: calc(94vh - 4rem);
   width: auto;
   height: auto;
   border-radius: var(--radius);
@@ -1023,9 +1023,144 @@ a.lightbox {
   box-shadow: var(--shadow);
 }
 
+.event-page .recap-page {
+  max-width: none;
+}
+
+/* must out-rank .prose a.lightbox (0,2,1), which floats speaker cards */
+.recap-page a.lightbox {
+  float: none;
+  display: block;
+  width: auto;
+  margin: 0;
+}
+
+.recap-page figure {
+  margin: 0;
+}
+
+.recap-page figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.recap-page figcaption {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.photo-hero {
+  margin: 0.4rem 0 1.6rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px 12px;
+  margin: 1.2rem 0 1.6rem;
+}
+
+.photo-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.photo-grid--1 {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 520px;
+}
+
+.photo-grid img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.photo-credit {
+  font-size: 0.9rem;
+}
+
+.recap-banner {
+  display: grid;
+  gap: 2px;
+  margin: 0 0 1.6rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--lake);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  color: var(--ink);
+  background: var(--mist);
+  text-decoration: none;
+}
+
+.recap-banner span {
+  color: var(--lake);
+  font-weight: 760;
+}
+
+.recap-banner:hover {
+  box-shadow: var(--hover-shadow);
+}
+
+.last-meetup-header {
+  margin-top: 56px;
+}
+
+.lightbox-figure {
+  margin: 0;
+}
+
+.lightbox-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.lightbox-counter {
+  flex: none;
+  color: rgba(255, 255, 255, 0.72);
+  font-variant-numeric: tabular-nums;
+}
+
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transform: translateY(-50%);
+}
+
+.lightbox-prev {
+  left: 14px;
+}
+
+.lightbox-next {
+  right: 14px;
+}
+
 .prose a {
   color: var(--lake);
   font-weight: 760;
+}
+
+.prose a.button {
+  color: var(--button-dark-text);
+  margin: 0.4rem 0 1.4rem;
 }
 
 .site-footer {
@@ -1175,6 +1310,15 @@ a.lightbox {
     display: block;
     width: min(320px, 100%);
     margin: 0 auto 1.1rem;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recap-page a.lightbox {
+    width: auto;
+    margin: 0;
   }
 
   .button {

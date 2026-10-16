@@ -46,7 +46,7 @@ ARTICLE_SAVE_AS = "{category}/{slug}/index.html"
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}/index.html"
 
-DIRECT_TEMPLATES = ["index", "events", "resources", "contact", "propose", "organizers"]
+DIRECT_TEMPLATES = ["index", "events", "resources", "contact", "propose", "organizers", "404"]
 INDEX_SAVE_AS = "index.html"
 EVENTS_SAVE_AS = "events/index.html"
 RESOURCES_SAVE_AS = "resources/index.html"

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ SITENAME }}{% endblock %}
+{% block description %}{{ page.description|default(SITEDESCRIPTION) }}{% endblock %}
+{% block og_image %}{{ page.image|default("assets/og-image.png") }}{% endblock %}
+
+{% block content %}
+  <section class="event-page">
+    <div class="shell">
+      <article class="recap-page">
+        <p class="section-kicker">Recap</p>
+        <h1 class="event-title">{{ page.title }}</h1>
+        <div class="event-meta">
+          {% if page.event_date_label %}
+            <span class="pill">{{ page.event_date_label }}</span>
+          {% endif %}
+          {% if page.venue %}
+            <span class="pill">{{ page.venue }}</span>
+          {% endif %}
+        </div>
+        <div class="prose">
+          {{ page.content }}
+        </div>
+        <div class="event-actions">
+          {% if page.slides %}
+            <a class="button dark" href="{{ SITEURL }}/{{ page.slides }}" target="_blank" rel="noopener">View the slides</a>
+          {% endif %}
+          {% if page.event %}
+            <a class="button light" href="{{ SITEURL }}/{{ page.event }}">Event details</a>
+          {% endif %}
+          <a class="button light" href="{{ SITEURL }}/events/">All events</a>
+        </div>
+      </article>
+    </div>
+  </section>
+{% endblock %}

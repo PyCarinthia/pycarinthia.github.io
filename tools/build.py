@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content"
 REMOTE = CONTENT / "_remote"
 OUTPUT = ROOT / "output"
+SLIDES = ROOT / "slides"
 VIENNA = ZoneInfo("Europe/Vienna")
 
 
@@ -266,6 +267,37 @@ def export_static_feeds() -> None:
     write_calendar(events)
 
 
+# The 404 page redirects deep links like /slides/1/7 to /slides/1/?route=7;
+# this puts the route back before the Slidev router boots.
+SLIDES_ROUTE_RESTORE = """
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var route = params.get("route");
+    if (route !== null) {
+      params.delete("route");
+      var search = params.toString();
+      window.history.replaceState(null, "", window.location.pathname + route + (search ? "?" + search : "") + window.location.hash);
+    }
+  })();
+</script>"""
+
+
+def copy_slides() -> None:
+    if not SLIDES.exists():
+        return
+    for deck in sorted(path for path in SLIDES.iterdir() if path.is_dir()):
+        shutil.copytree(
+            deck,
+            OUTPUT / "slides" / deck.name,
+            ignore=shutil.ignore_patterns("_redirects", ".htaccess"),
+        )
+        index = OUTPUT / "slides" / deck.name / "index.html"
+        if index.exists():
+            html = index.read_text(encoding="utf-8")
+            index.write_text(html.replace("<head>", "<head>" + SLIDES_ROUTE_RESTORE, 1), encoding="utf-8")
+
+
 def run_pelican(settings: str) -> None:
     subprocess.run(
         [sys.executable, "-m", "pelican", "content", "-s", settings, "-o", str(OUTPUT)],
@@ -294,6 +326,7 @@ def main() -> None:
     if OUTPUT.exists():
         shutil.rmtree(OUTPUT)
     run_pelican(args.settings)
+    copy_slides()
     export_static_feeds()
 
     if args.serve:

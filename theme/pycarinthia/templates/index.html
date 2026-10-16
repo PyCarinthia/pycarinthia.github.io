@@ -98,6 +98,35 @@
           </div>
         </article>
       {% endif %}
+
+      {% set last_recap = articles|past_events|selectattr("recap")|first %}
+      {% if last_recap %}
+        <div class="section-header last-meetup-header">
+          <p class="section-kicker">Last meetup</p>
+          <h2 class="section-heading">Missed it? Catch up.</h2>
+        </div>
+        <article class="event-panel{% if last_recap.recap_image %} event-panel--image{% endif %}">
+          <div class="date-tile" aria-label="{{ last_recap|event_date_long }}">
+            <span class="month">{{ last_recap|event_month }}</span>
+            <span class="day">{{ last_recap|event_day }}</span>
+            <span class="time">{{ last_recap.venue }}</span>
+          </div>
+          <div class="event-body">
+            <p class="card-kicker">Recap</p>
+            <h3 class="event-title"><a class="event-title-link" href="{{ SITEURL }}/{{ last_recap.recap }}">{{ last_recap.title }}</a></h3>
+            <p>Talk summaries, slides, and photos from the evening.</p>
+            <div class="event-actions">
+              <a class="button dark" href="{{ SITEURL }}/{{ last_recap.recap }}">Read the recap</a>
+              <a class="button light" href="{{ SITEURL }}/{{ last_recap.url }}">Event details</a>
+            </div>
+          </div>
+          {% if last_recap.recap_image %}
+            <a class="event-panel-image" href="{{ SITEURL }}/{{ last_recap.recap }}">
+              <img src="{{ SITEURL }}/{{ last_recap.recap_image }}" alt="{{ last_recap.title }}: read the recap" loading="lazy">
+            </a>
+          {% endif %}
+        </article>
+      {% endif %}
     </div>
   </section>
 
