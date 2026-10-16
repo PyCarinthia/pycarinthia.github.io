@@ -171,7 +171,7 @@ SPONSORS = [
     },
     {
         "name": "Anexia Digital",
-        "href": "https://anexia.com/",
+        "href": "https://anexia.com/de/digital-engineering",
         "logo": "assets/sponsors/anexia-digital.svg",
     },
 ]
