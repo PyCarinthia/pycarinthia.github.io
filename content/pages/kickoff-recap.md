@@ -53,8 +53,9 @@ Alina presented a project that helps emergency services keep an overview during 
 - **The system.** A detection model identifies emergency vehicles in the camera feeds in real time. Because the tunnel's distances were measured, the system can show on a live map exactly where each vehicle is and where rescuers need to go.
 - **Recognition.** Tunnel emergency services welcomed the visual confirmation of where help is needed, and the project has won several awards, including the Bosch Innovation Award.
 
-<div class="photo-grid photo-grid--2">
+<div class="photo-grid">
 <figure><a class="lightbox" data-gallery="alina" href="{static}/assets/events/kickoff/photos/05.jpg"><img src="{static}/assets/events/kickoff/photos/05-thumb.jpg" alt="Alina Nessel opening her LiveSaferOverview talk on saving lives in tunnels with AI" loading="lazy"></a><figcaption>Alina Nessel opening her LiveSaferOverview talk on saving lives in tunnels with AI</figcaption></figure>
+<figure><a class="lightbox" data-gallery="alina" href="{static}/assets/events/kickoff/photos/13.jpg"><img src="{static}/assets/events/kickoff/photos/13-thumb.jpg" alt="Alina Nessel explaining how LiveSaferOverview supports rescue teams" loading="lazy"></a><figcaption>Alina Nessel explaining how LiveSaferOverview supports rescue teams</figcaption></figure>
 <figure><a class="lightbox" data-gallery="alina" href="{static}/assets/events/kickoff/photos/06.jpg"><img src="{static}/assets/events/kickoff/photos/06-thumb.jpg" alt="Alina Nessel presenting AI detection of emergency vehicles in tunnel camera feeds" loading="lazy"></a><figcaption>Alina Nessel presenting AI detection of emergency vehicles in tunnel camera feeds</figcaption></figure>
 </div>
 
