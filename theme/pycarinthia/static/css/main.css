@@ -1023,6 +1023,10 @@ a.lightbox {
   box-shadow: var(--shadow);
 }
 
+.event-page .recap-page {
+  max-width: none;
+}
+
 /* must out-rank .prose a.lightbox (0,2,1), which floats speaker cards */
 .recap-page a.lightbox {
   float: none;
