@@ -19,6 +19,6 @@ Expect talks on Python, AI, and everything around them, followed by open discuss
 
 Doors open at 17:30. Please arrive before 20:00: after that, the building can only be entered with a bank card.
 
-After the talks, networking continues in the NEXUS Hub and Café COMO.
+After the talks, networking continues in the NEXUS Hub.
 
 Just here to listen? Perfect. Come along, ask questions, or simply see who else is around.
