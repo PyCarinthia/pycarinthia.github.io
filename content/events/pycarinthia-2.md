@@ -10,6 +10,7 @@ City: Klagenfurt
 Map_url: https://www.google.com/maps/dir/?api=1&destination=NEXUS%20Hub%2C%20Nautilusweg%2012%2C%209020%20Klagenfurt
 Format: Talks + discussion
 Description: The second PyCarinthia meetup at the NEXUS Hub next to the University of Klagenfurt: talks on Python and AI, open discussion, and drinks afterwards. Speakers and RSVP details will follow.
+Image: assets/events/pycarinthia-2/social.jpg
 
 The second PyCarinthia meetup is set for Wednesday, 13 January 2027, at the [NEXUS Hub powered by Kärntner Sparkasse](https://www.sparkasse.at/kaernten/nexus), right next to the University of Klagenfurt.
 
