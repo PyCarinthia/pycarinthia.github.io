@@ -146,6 +146,31 @@ def gcal_url(article: object) -> str:
     return "https://calendar.google.com/calendar/render?" + urlencode(params)
 
 
+RSVP_PLATFORMS = [
+    ("rsvp_meetup", "Meetup"),
+    ("rsvp_kommunity", "Kommunity"),
+    ("rsvp_luma", "Luma"),
+]
+
+
+def rsvp_links(article: object) -> list[dict[str, str]]:
+    """RSVP buttons for an event, from Rsvp_meetup / Rsvp_kommunity / Rsvp_luma.
+
+    Falls back to the single External_url / External_label pair when no
+    per-platform link is set, so older events keep working.
+    """
+    links = []
+    for key, platform in RSVP_PLATFORMS:
+        url = meta_value(article, key).strip()
+        if url:
+            links.append({"url": url, "label": f"RSVP on {platform}"})
+    if not links:
+        url = meta_value(article, "external_url").strip()
+        if url:
+            links.append({"url": url, "label": meta_value(article, "external_label") or "RSVP"})
+    return links
+
+
 def group_resources(resources: list[object]) -> list[dict[str, object]]:
     labels = {
         "learn": "Learn Python",

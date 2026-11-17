@@ -37,9 +37,9 @@
                 <a href="{{ SITEURL }}/calendar.ics">Download .ics</a>
               </div>
             </details>
-            {% if article.external_url %}
-              <a class="button light" href="{{ article.external_url }}" target="_blank" rel="noopener noreferrer">{{ article.external_label|default("RSVP") }}</a>
-            {% endif %}
+            {% for rsvp in article|rsvp_links %}
+              <a class="button light" href="{{ rsvp.url }}" target="_blank" rel="noopener noreferrer">{{ rsvp.label }}</a>
+            {% endfor %}
             {% if article.map_url %}
               <a class="button light" href="{{ article.map_url }}" target="_blank" rel="noopener noreferrer">Plan route</a>
             {% endif %}
