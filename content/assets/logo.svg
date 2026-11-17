@@ -23,9 +23,12 @@
       <stop offset="100%" stop-color="#1667b3" />
     </linearGradient>
 
-    <!-- Top-Left Python Shape Clip Path -->
+    <!-- Top-Left Python Shape Clip Path (Flush with the central mountain ridge) -->
     <clipPath id="top-snake-clip">
-      <path d="M 279 280 
+      <path d="M 185 280 
+               L 416.3 280 
+               L 442.3 250 
+               L 279 250 
                L 279 180 
                C 279 96, 378 72, 488 72 
                C 598 72, 698 96, 698 185 
@@ -58,16 +61,12 @@
     </clipPath>
   </defs>
 
-
   <!-- ========================================== -->
   <!-- TOP-LEFT PYTHON SHAPE (MOUNTAIN RANGE)     -->
   <!-- ========================================== -->
   <g clip-path="url(#top-snake-clip)">
     <!-- Sky Background -->
     <rect x="0" y="0" width="750" height="750" fill="url(#sky-left)" />
-
-    <!-- Horizontal White Cutout (Underneath the Central Mountain Peak) -->
-    <rect x="270" y="250" width="200" height="30" fill="#ffffff" />
 
     <!-- Top-Left Eye / Sun -->
     <circle cx="369" cy="166" r="37" fill="#f8fcff" />
@@ -220,7 +219,6 @@
     <rect x="500" y="250" width="460" height="260" fill="url(#sky-right)" />
 
     <!-- Right Arm Mountain -->
-    <!-- Mountain Base -->
     <path d="M 520 509 
              L 685 509 
              L 802 323 
@@ -228,7 +226,6 @@
              L 950 436 
              L 950 509 Z" fill="#135ca1" />
 
-    <!-- Dark Blue Mountain Rim -->
     <path d="M 685 509 
              L 802 323 
              L 898 412 
@@ -239,21 +236,18 @@
              L 725 425 
              L 695 509 Z" fill="#0d4a85" />
 
-    <!-- Right Mountain Mid-Blue Shadow Facet -->
     <path d="M 822 393 
              L 832 457 
              L 840 442 
              L 864 466 
              L 848 402 Z" fill="#39a0df" />
 
-    <!-- Right Mountain Snow Cap (White Left) -->
     <path d="M 802 350 
              L 725 425 
              L 792 375 
              L 832 457 
              L 822 393 Z" fill="#f8fcff" />
 
-    <!-- Right Mountain Snow Cap (Ice Blue Right) -->
     <path d="M 802 350 
              L 822 393 
              L 852 415 
@@ -273,7 +267,6 @@
              C 345 620, 435 625, 435 633 
              C 435 641, 345 646, 275 648 Z" fill="#1562a8" />
 
-    <!-- Lower Snake Deep Water & Winding Current -->
     <!-- Deep Blue Water Base -->
     <path d="M 275 662 
              C 350 668, 425 680, 425 692 
@@ -284,7 +277,7 @@
              L 675 935 
              L 275 935 Z" fill="url(#deep-water)" />
 
-    <!-- Lower-Right Dark Blue Water Lobe (Above Bottom Eye) -->
+    <!-- Lower-Right Dark Blue Water Lobe -->
     <path d="M 480 745 
              C 510 765, 635 772, 710 755 
              L 710 835 
