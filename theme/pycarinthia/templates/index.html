@@ -59,9 +59,9 @@
             <p>{{ next_event.description }}</p>
             <div class="event-actions">
               <a class="button light" href="{{ SITEURL }}/{{ next_event.url }}">Read details</a>
-              {% if next_event.external_url %}
-                <a class="button light" href="{{ next_event.external_url }}" target="_blank" rel="noopener noreferrer">{{ next_event.external_label|default("RSVP") }}</a>
-              {% endif %}
+              {% for rsvp in next_event|rsvp_links %}
+                <a class="button light" href="{{ rsvp.url }}" target="_blank" rel="noopener noreferrer">{{ rsvp.label }}</a>
+              {% endfor %}
               {% if next_event.map_url %}
                 <a class="button light" href="{{ next_event.map_url }}" target="_blank" rel="noopener noreferrer">Plan route</a>
               {% endif %}

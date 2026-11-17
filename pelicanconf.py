@@ -18,6 +18,7 @@ from jinja_filters import (  # noqa: E402
     group_resources,
     past_events,
     resource_articles,
+    rsvp_links,
     upcoming_events,
 )
 
@@ -94,6 +95,7 @@ JINJA_FILTERS = {
     "group_resources": group_resources,
     "past_events": past_events,
     "resource_articles": resource_articles,
+    "rsvp_links": rsvp_links,
     "upcoming_events": upcoming_events,
 }
 

@@ -124,9 +124,17 @@ For GitHub Pages, set these as repository variables:
 - `PYCARINTHIA_PROPOSAL_FORM_URL`
 - `PYCARINTHIA_RSVP_PLATFORM_URL`
 
-For event RSVPs, set `External_url` on the event Markdown to that event's
-registration page — currently a Meetup event for PyCarinthia. `External_label`
-sets the RSVP button text:
+For event RSVPs, set one or more per-platform links on the event Markdown.
+Each one becomes an "RSVP on …" button, in the order Meetup, Kommunity, Luma:
+
+```md
+Rsvp_meetup: https://www.meetup.com/pycarinthia/events/317461096/
+Rsvp_kommunity: https://kommunity.com/pycarinthia/events/pycarinthia-2-1a58d1b8
+Rsvp_luma: https://luma.com/elwi3kh9
+```
+
+If none of these are set, the single `External_url` link is used instead, with
+`External_label` as the button text (default `RSVP`):
 
 ```md
 External_url: https://www.meetup.com/pycarinthia/events/316488225/
