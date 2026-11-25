@@ -14,6 +14,7 @@ Rsvp_kommunity: https://kommunity.com/pycarinthia/events/pycarinthia-2-1a58d1b8
 Rsvp_luma: https://luma.com/elwi3kh9
 Description: The second PyCarinthia meetup at the NEXUS Hub next to the University of Klagenfurt: talks on Python and AI, open discussion, and drinks afterwards. Speakers will be announced soon.
 Image: assets/events/pycarinthia-2/social.jpg
+Poster: assets/events/pycarinthia-2/poster.jpg
 
 The second PyCarinthia meetup is set for Wednesday, 13 January 2027, at the [NEXUS Hub powered by Kärntner Sparkasse](https://www.sparkasse.at/kaernten/nexus), right next to the University of Klagenfurt.
 
